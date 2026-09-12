@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohammed Yusuf</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Alex+Brush&family=Amiri:ital@0;1&display=swap">
+<style>
+:root{
+  --navy:#063B78;
+  --navy-dark:#0A315D;
+  --baby:#A8D2F2;
+  --pale:#DCEFFF;
+  --bg:#F7FBFF;
+  --white:#FFFFFF;
+  --gold:#D6A84A;
+  --gold-soft:#E7C979;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:#0d2542;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  color:var(--navy);
+  display:flex;justify-content:center;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+}
+
+.phone{
+  width:100%;max-width:430px;min-height:100vh;
+  background:var(--bg);position:relative;
+  box-shadow:0 0 60px rgba(0,0,0,.5);
+  overflow-x:hidden;
+}
+
+/* soft sky washes */
+.sky{
+  position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 30% at 10% 0%, rgba(168,210,242,.55), transparent 60%),
+    radial-gradient(ellipse 60% 30% at 95% 5%, rgba(168,210,242,.5), transparent 60%),
+    radial-gradient(ellipse 70% 40% at 0% 100%, rgba(168,210,242,.5), transparent 60%),
+    radial-gradient(ellipse 70% 40% at 100% 100%, rgba(168,210,242,.5), transparent 60%);
+}
+.stars{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.8;}
+.stars svg{position:absolute;color:var(--gold);}
+
+section{position:relative;overflow:hidden;padding:60px 24px 52px;text-align:center;border-bottom:1px solid rgba(6,59,120,.12);}
+section:last-of-type{border-bottom:none;padding-bottom:110px;}
+
+.eyebrow{font-family:'Cormorant Garamond',serif;letter-spacing:4px;text-transform:uppercase;font-size:12px;color:var(--navy);opacity:.65;margin-bottom:10px;}
+
+/* ---------- opening screen ---------- */
+#opening{
+  position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(168,210,242,.5), transparent 55%),
+    radial-gradient(ellipse at 85% 15%, rgba(214,168,74,.18), transparent 45%),
+    linear-gradient(180deg,#eaf5ff 0%,#cfe8fb 55%,#a9d3f2 100%);
+  text-align:center;padding:20px;
+}
+#opening.gone{display:none;}
+.opening-inner{max-width:340px;}
+.open-crescent{width:70px;height:70px;color:var(--gold);margin:0 auto 18px;filter:drop-shadow(0 0 10px rgba(214,168,74,.5));}
+.open-bismillah{font-family:'Amiri',serif;font-size:26px;color:var(--navy-dark);margin-bottom:8px;}
+.open-sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--navy);opacity:.75;font-size:13px;line-height:1.7;margin-bottom:30px;}
+.open-title{font-family:'Playfair Display',serif;font-weight:700;font-size:44px;color:var(--navy);letter-spacing:2px;line-height:1.1;}
+.open-name{font-family:'Alex Brush',cursive;font-size:52px;color:var(--navy-dark);margin:14px 0 30px;}
+.open-btn{
+  padding:14px 40px;background:var(--navy);color:var(--white);border:none;border-radius:30px;
+  font-family:'Cormorant Garamond',serif;letter-spacing:3px;text-transform:uppercase;font-size:13px;
+  cursor:pointer;box-shadow:0 10px 30px rgba(6,59,120,.35);
+}
+
+/* ---------- invite reveal ---------- */
+#invite{position:relative;z-index:1;opacity:0;}
+#invite.show{opacity:1;}
+
+.corner-svg{position:absolute;width:100px;height:120px;pointer-events:none;z-index:1;}
+.corner-svg.tl{top:0;left:0;}
+.corner-svg.tr{top:0;right:0;transform:scaleX(-1);}
+.corner-svg.bl{bottom:0;left:0;transform:scaleY(-1);}
+.corner-svg.br{bottom:0;right:0;transform:scale(-1,-1);}
+
+.divider{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px 0;color:var(--gold);}
+.divider .line{width:36px;height:1px;background:var(--baby);}
+.divider .mark{font-size:13px;color:var(--navy);}
+
+.bismillah{font-family:'Amiri',serif;font-size:28px;color:var(--navy-dark);margin-bottom:8px;}
+.bismillah-en{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--navy);opacity:.8;font-size:14px;line-height:1.7;}
+
+.hosts{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:var(--navy-dark);margin:6px 0;}
+.invite-verb{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--navy);opacity:.75;font-size:14px;}
+
+.event-title{font-family:'Playfair Display',serif;font-weight:700;font-size:40px;line-height:1.05;color:var(--navy);letter-spacing:1px;margin:14px 0;}
+.rel-line{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--navy);font-size:15px;}
+.rel-line .heart{color:var(--baby);}
+
+.child-name{font-family:'Alex Brush',cursive;font-size:56px;color:var(--navy-dark);margin:10px 0;}
+
+/* info rows */
+.info-row{display:flex;align-items:center;gap:16px;text-align:left;max-width:290px;margin:0 auto;padding:16px 0;}
+.info-row>div{flex:1;min-width:0;}
+.info-icon-circle{
+  flex:none;width:52px;height:52px;border-radius:50%;background:var(--pale);
+  display:flex;align-items:center;justify-content:center;color:var(--navy);
+}
+.info-icon-circle svg{width:26px;height:26px;}
+.info-label{font-family:'Cormorant Garamond',serif;letter-spacing:2px;text-transform:uppercase;font-size:11px;color:var(--navy);opacity:.6;margin-bottom:2px;}
+.info-value{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:var(--navy-dark);overflow-wrap:break-word;}
+.info-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--navy);opacity:.7;}
+.info-dash{max-width:290px;margin:0 auto;height:1px;
+  background:repeating-linear-gradient(90deg,var(--baby) 0 6px, transparent 6px 12px);
+  position:relative;}
+.info-dash .mark{position:absolute;top:-7px;left:50%;transform:translateX(-50%);background:var(--bg);color:var(--baby);font-size:12px;padding:0 6px;}
+a.venue-link{color:var(--navy-dark);text-decoration:none;border-bottom:1px dashed var(--baby);}
+
+p.lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--navy-dark);line-height:1.75;max-width:280px;margin:0 auto;}
+
+/* dua plaque */
+.dua-plaque{
+  position:relative;margin:20px auto 0;max-width:280px;padding:26px 22px;
+  background:linear-gradient(160deg,#eef7ff,#dcefff);
+  border:1px solid var(--baby);border-radius:50% 50% 8% 8% / 18% 18% 6% 6%;
+  cursor:pointer;
+}
+.dua-plaque .dua-label{font-family:'Cormorant Garamond',serif;letter-spacing:3px;text-transform:uppercase;font-size:12px;color:var(--navy);opacity:.7;margin-bottom:10px;}
+.dua-plaque .dua-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--navy-dark);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .5s ease;}
+.dua-plaque.open .dua-text{max-height:260px;}
+.dua-plaque .ameen{display:block;margin-top:10px;font-style:italic;color:var(--navy);font-weight:600;}
+.dua-hint{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:1px;color:var(--navy);opacity:.55;margin-top:8px;}
+
+/* rsvp */
+.rsvp-btn{
+  margin-top:18px;padding:14px 44px;background:var(--navy);color:var(--white);
+  border:none;border-radius:30px;font-family:'Cormorant Garamond',serif;letter-spacing:3px;
+  text-transform:uppercase;font-size:13px;cursor:pointer;box-shadow:0 6px 18px rgba(6,59,120,.3);
+}
+form.rsvp-form{max-width:280px;margin:22px auto 0;text-align:left;display:none;}
+form.rsvp-form.show{display:block;animation:fadeUp .5s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+form.rsvp-form label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin:14px 0 6px;}
+form.rsvp-form input[type=text],form.rsvp-form input[type=number]{
+  width:100%;padding:9px 10px;border:1px solid var(--baby);background:#fff;
+  border-radius:8px;font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--navy-dark);
+}
+.radio-row{display:flex;gap:22px;margin-top:4px;}
+.radio-row label{display:flex;align-items:center;gap:6px;margin:0;font-size:13px;text-transform:none;letter-spacing:0;color:var(--navy-dark);}
+form.rsvp-form button{
+  margin-top:20px;width:100%;padding:13px;background:var(--navy-dark);color:var(--white);
+  border:none;letter-spacing:2px;text-transform:uppercase;font-size:12px;border-radius:30px;cursor:pointer;
+}
+.thankyou{display:none;text-align:center;margin-top:22px;color:var(--navy-dark);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;}
+.thankyou.show{display:block;animation:fadeUp .5s ease;}
+
+.credit{margin-top:34px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;letter-spacing:1.5px;color:var(--gold);opacity:.85;}
+
+nav.bottomnav{
+  position:sticky;bottom:0;left:0;right:0;z-index:10;
+  display:flex;justify-content:space-around;align-items:center;
+  padding:14px 10px 18px;background:rgba(247,251,255,.94);backdrop-filter:blur(6px);
+  border-top:1px solid rgba(168,210,242,.6);
+}
+nav.bottomnav a{
+  display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;
+  color:var(--navy);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
+  font-family:'Cormorant Garamond',serif;opacity:.65;transition:opacity .2s ease,color .2s ease;
+}
+nav.bottomnav a.active,nav.bottomnav a:active{opacity:1;color:var(--gold);}
+nav.bottomnav a:focus-visible{outline:2px solid var(--navy);outline-offset:2px;}
+nav.bottomnav a .ic{font-size:16px;}
+
+@media (min-width:480px){body{background:radial-gradient(ellipse at top, #16385f, #08192c);}}
+
+/* ================= LAPTOP / WIDE VIEWPORT ================= */
+.stage{width:100%;display:flex;justify-content:center;}
+.side-panel{display:none;}
+@media (min-width:900px){
+  body{align-items:center;background:linear-gradient(150deg,#16385f 0%,#0c243f 65%,#061424 100%);}
+  .stage{max-width:1080px;min-height:100vh;align-items:stretch;}
+  .side-panel{
+    display:flex;flex:1;min-width:320px;position:sticky;top:0;align-self:flex-start;height:100vh;
+    align-items:center;justify-content:center;overflow:hidden;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(214,168,74,.16), transparent 55%),
+      linear-gradient(200deg,#16385f,#08192c 70%);
+  }
+  .side-panel::before{content:"";position:absolute;inset:24px;border:1px solid rgba(214,168,74,.28);}
+  .side-inner{position:relative;text-align:center;padding:40px;}
+  .side-crescent{width:80px;height:80px;color:var(--gold-soft);margin:0 auto 18px;}
+  .side-eyebrow{font-family:'Cormorant Garamond',serif;letter-spacing:6px;text-transform:uppercase;font-size:13px;color:#cfe3f5;margin-bottom:14px;}
+  .side-title{font-family:'Playfair Display',serif;font-weight:700;font-size:30px;color:#f7fbff;letter-spacing:1px;}
+  .side-name{font-family:'Alex Brush',cursive;font-size:46px;color:var(--gold-soft);margin-top:10px;}
+  .phone{flex:none;width:440px;min-height:100vh;box-shadow:0 30px 90px rgba(0,0,0,.6);}
+}
+</style>
+
+<!-- reusable ornament defs -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="floral">
+      <path d="M6 70c6-20 2-34 14-50" fill="none" stroke="#8FB8DE" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M20 20c6 5 10-3 16-1" fill="none" stroke="#8FB8DE" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M12 42c6 3 10-3 16 0" fill="none" stroke="#8FB8DE" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="22" cy="12" r="6" fill="#fff" stroke="#A8D2F2" stroke-width="1.3"/>
+      <circle cx="22" cy="12" r="2.4" fill="#D6A84A"/>
+      <circle cx="8" cy="62" r="3.4" fill="#fff" stroke="#A8D2F2" stroke-width="1.1"/>
+      <circle cx="30" cy="30" r="2.6" fill="#A8D2F2" opacity=".7"/>
+    </g>
+    <g id="lantern">
+      <line x1="12" y1="0" x2="12" y2="8" stroke="#8FB8DE" stroke-width="1.2"/>
+      <path d="M4 8 h16 l-2 6 h-12 z" fill="none" stroke="#063B78" stroke-width="1.3"/>
+      <rect x="3" y="14" width="18" height="22" rx="3" fill="#DCEFFF" stroke="#063B78" stroke-width="1.3"/>
+      <circle cx="12" cy="25" r="4" fill="#E7C979" opacity=".85"/>
+      <path d="M5 36 h14 l-2 6 h-10 z" fill="none" stroke="#063B78" stroke-width="1.3"/>
+      <line x1="12" y1="42" x2="12" y2="46" stroke="#8FB8DE" stroke-width="1.2"/>
+    </g>
+    <g id="crescent-star">
+      <path d="M38.5 23.4 A16.5 16.5 0 1 1 20.6 5.5 A12.8 12.8 0 0 0 38.5 23.4 Z" fill="currentColor"/>
+      <path d="M9 30 l1.6 3.4 3.7 0.5 -2.7 2.6 0.6 3.7 -3.2 -1.8 -3.2 1.8 0.6 -3.7 -2.7 -2.6 3.7 -0.5 Z" fill="currentColor"/>
+    </g>
+    <g id="icon-cal">
+      <rect x="3" y="6" width="26" height="22" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="3" y1="12" x2="29" y2="12" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="9" y1="3" x2="9" y2="9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="23" y1="3" x2="23" y2="9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="16" cy="19" r="2.4" fill="currentColor"/>
+    </g>
+    <g id="icon-clock">
+      <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="16" y1="16" x2="16" y2="7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="16" y1="16" x2="22" y2="19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </g>
+    <g id="icon-pin">
+      <path d="M16 30S4 18 4 12a12 12 0 1 1 24 0c0 6-12 18-12 18Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="16" cy="12" r="4" fill="currentColor"/>
+    </g>
+    <g id="teddy">
+      <!-- ears -->
+      <circle cx="27" cy="30" r="11" fill="#E7C9A0"/>
+      <circle cx="73" cy="30" r="11" fill="#E7C9A0"/>
+      <circle cx="27" cy="30" r="5" fill="#F3E0C4"/>
+      <circle cx="73" cy="30" r="5" fill="#F3E0C4"/>
+      <!-- body -->
+      <path d="M18 108c-2-24 12-38 32-38s34 14 32 38z" fill="#E7C9A0"/>
+      <circle cx="34" cy="104" r="9" fill="#E7C9A0"/>
+      <circle cx="66" cy="104" r="9" fill="#E7C9A0"/>
+      <!-- chest heart -->
+      <path d="M50 96c-9-8-15-13-15-20a8 8 0 0 1 15-4 8 8 0 0 1 15 4c0 7-6 12-15 20z" fill="#A8D2F2"/>
+      <!-- head -->
+      <circle cx="50" cy="52" r="27" fill="#E7C9A0"/>
+      <!-- cap covering top half of head -->
+      <path d="M23.5 52a26.5 26.5 0 0 1 53 0z" fill="#063B78"/>
+      <path d="M23.5 52h53" stroke="#0A315D" stroke-width="1.4"/>
+      <!-- muzzle -->
+      <ellipse cx="50" cy="60" rx="13" ry="9.5" fill="#F3E0C4"/>
+      <!-- eyes + nose -->
+      <circle cx="41" cy="55" r="2.6" fill="#4A3221"/>
+      <circle cx="59" cy="55" r="2.6" fill="#4A3221"/>
+      <ellipse cx="50" cy="59" rx="3.4" ry="2.6" fill="#4A3221"/>
+    </g>
+  </defs>
+</svg>
+</head>
+<body>
+
+<div id="opening">
+  <div class="opening-inner">
+    <svg class="open-crescent" viewBox="0 0 44 44"><use href="#crescent-star"/></svg>
+    <div class="open-bismillah" lang="ar" dir="rtl">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+    <div class="open-sub">With the blessings of Allah<br>and the love of our family</div>
+    <div class="open-title">CHILLA<br>CEREMONY</div>
+    <div class="open-name">Mohammed Yusuf</div>
+    <button class="open-btn" id="open-btn">Open Invitation</button>
+  </div>
+</div>
+
+<div class="stage">
+<aside class="side-panel">
+  <div class="side-inner">
+    <svg class="side-crescent" viewBox="0 0 44 44"><use href="#crescent-star"/></svg>
+    <div class="side-eyebrow">Chilla Ceremony</div>
+    <div class="side-title">of our beloved son</div>
+    <div class="side-name">Mohammed Yusuf</div>
+  </div>
+</aside>
+<div class="phone">
+  <div class="sky"></div>
+  <div id="invite">
+
+    <!-- COVER -->
+    <section id="cover">
+      <svg class="corner-svg tl" viewBox="0 0 100 120" fill="none"><use href="#floral" color="#8FB8DE"/><g transform="translate(58,2)"><use href="#lantern"/></g></svg>
+      <svg class="corner-svg tr" viewBox="0 0 100 120" fill="none"><g transform="translate(10,4) scale(1.3)"><use href="#crescent-star" color="#D6A84A"/></g></svg>
+
+      <div class="bismillah" lang="ar" dir="rtl">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+      <div class="bismillah-en">With the blessings of Allah<br>and the love of our family</div>
+
+      <div class="divider"><span class="line"></span><span class="mark">♥</span><span class="line"></span></div>
+
+      <div class="hosts">Mr. Mohammed Sadiq &amp; Mrs. Layba Ali</div>
+      <div class="invite-verb">cordially invite you to the</div>
+
+      <div class="event-title">CHILLA<br>CEREMONY</div>
+      <div class="rel-line"><span class="heart">♥</span> of our beloved son <span class="heart">♥</span></div>
+      <div class="child-name">Mohammed Yusuf</div>
+
+      <div class="divider"><span class="line"></span><span class="mark">✦</span><span class="line"></span></div>
+    </section>
+
+    <!-- DATE / TIME / VENUE -->
+    <section id="details">
+      <svg class="corner-svg bl" viewBox="0 0 100 120" fill="none"><use href="#floral" color="#8FB8DE"/></svg>
+
+      <div class="info-row">
+        <div class="info-icon-circle"><svg viewBox="0 0 32 32"><use href="#icon-cal"/></svg></div>
+        <div>
+          <div class="info-label">Date</div>
+          <div class="info-value">03-October-2026</div>
+          <div class="info-sub">(Sunday)</div>
+        </div>
+      </div>
+      <div class="info-dash"><span class="mark">♥</span></div>
+
+      <div class="info-row">
+        <div class="info-icon-circle"><svg viewBox="0 0 32 32"><use href="#icon-clock"/></svg></div>
+        <div>
+          <div class="info-label">Time</div>
+          <div class="info-value">5:00 PM</div>
+          <div class="info-sub">(Dinner Follows)</div>
+        </div>
+      </div>
+      <div class="info-dash"><span class="mark">♥</span></div>
+
+      <div class="info-row">
+        <div class="info-icon-circle"><svg viewBox="0 0 32 32"><use href="#icon-pin"/></svg></div>
+        <div>
+          <div class="info-label">Venue</div>
+          <div class="info-value"><a class="venue-link" href="https://www.google.com/maps/search/?api=1&query=AVK+Lawns" target="_blank" rel="noopener">AVK LAWNS</a></div>
+          <div class="info-sub">Tap to open location</div>
+        </div>
+      </div>
+
+      <div class="divider" style="margin-top:26px;"><span class="line"></span><span class="mark">◇</span><span class="line"></span></div>
+      <p class="lead">Your presence will make this special occasion even more meaningful for our family.</p>
+    </section>
+
+    <!-- DUA -->
+    <section id="dua">
+      <svg class="corner-svg tr" viewBox="0 0 100 120" fill="none"><g transform="translate(10,6)"><use href="#lantern"/></g></svg>
+      <p class="lead" style="max-width:260px;">May Allah make him a righteous child, fill his heart with Imaan, his life with barakah, and his steps with goodness.<br><span style="font-weight:600;">Ameen.</span></p>
+
+      <div class="dua-plaque" id="dua-plaque">
+        <div class="dua-label">A Special Dua</div>
+        <div class="dua-text" id="dua-text">
+          May Allah keep our little one under His protection, grant him a healthy and happy life, and make him a source of khair for this world and the Hereafter.
+          <span class="ameen">Ameen</span>
+        </div>
+        <div class="dua-hint" id="dua-hint">Tap to reveal</div>
+      </div>
+    </section>
+
+    <!-- CELEBRATION -->
+    <section id="celebrate">
+      <svg class="corner-svg bl" viewBox="0 0 100 120" fill="none"><use href="#floral" color="#8FB8DE"/></svg>
+      <div class="eyebrow">Join The Celebration</div>
+      <svg viewBox="0 0 100 110" style="width:150px;height:auto;margin:6px auto 4px;display:block;"><use href="#teddy"/></svg>
+      <p class="lead">A joyful gathering to thank Allah for this little blessing — come celebrate with us.</p>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp">
+      <div class="eyebrow">Confirm Your Presence</div>
+      <div class="event-title" style="font-size:28px;">RSVP</div>
+      <p class="lead">We'd love to have you join us, in sha Allah. Kindly let us know if you can make it.</p>
+      <button class="rsvp-btn" id="rsvp-open">RSVP Now</button>
+
+      <form class="rsvp-form" id="rsvp-form">
+        <label>Your Name</label>
+        <input type="text" required placeholder="Full name">
+
+        <label>Will You Be Attending?</label>
+        <div class="radio-row">
+          <label><input type="radio" name="attend" value="yes" checked> Yes</label>
+          <label><input type="radio" name="attend" value="no"> No</label>
+        </div>
+
+        <label>Number Of Guests</label>
+        <input type="number" min="1" max="10" value="1">
+
+        <button type="submit">Submit</button>
+      </form>
+      <div class="thankyou" id="rsvp-thanks">Jazakum Allahu khayran — see you there! ♥</div>
+      <div class="credit">Made with love by Tousif</div>
+    </section>
+
+  </div>
+
+  <nav class="bottomnav">
+    <a href="#cover" class="nav-link active"><span class="ic">✦</span>Invitation</a>
+    <a href="#details" class="nav-link"><span class="ic">◉</span>Details</a>
+    <a href="#dua" class="nav-link"><span class="ic">☾</span>Dua</a>
+    <a href="#rsvp" class="nav-link"><span class="ic">♥</span>RSVP</a>
+  </nav>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// ---------- Opening -> invite reveal ----------
+const opening = document.getElementById('opening');
+const invite = document.getElementById('invite');
+document.getElementById('open-btn').addEventListener('click', ()=>{
+  gsap.to(opening, {opacity:0, duration:.6, ease:'power1.out', onComplete:()=>opening.classList.add('gone')});
+  invite.classList.add('show');
+  gsap.fromTo(invite, {opacity:0, y:14}, {opacity:1, y:0, duration:.8, ease:'power2.out', delay:.15});
+});
+
+// ---------- Dua plaque toggle ----------
+const duaPlaque = document.getElementById('dua-plaque');
+const duaHint = document.getElementById('dua-hint');
+duaPlaque.addEventListener('click', ()=>{
+  duaPlaque.classList.toggle('open');
+  duaHint.textContent = duaPlaque.classList.contains('open') ? '' : 'Tap to reveal';
+});
+
+// ---------- RSVP form toggle ----------
+const rsvpOpenBtn = document.getElementById('rsvp-open');
+const rsvpForm = document.getElementById('rsvp-form');
+const thanks = document.getElementById('rsvp-thanks');
+rsvpOpenBtn.addEventListener('click', ()=>{ rsvpForm.classList.toggle('show'); });
+rsvpForm.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  rsvpForm.classList.remove('show');
+  thanks.classList.add('show');
+  rsvpOpenBtn.style.display='none';
+});
+
+// ---------- Bottom nav active state ----------
+const links = document.querySelectorAll('.nav-link');
+const secs = ['cover','details','dua','rsvp'].map(id=>document.getElementById(id));
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const id = entry.target.id;
+      links.forEach(l=>l.classList.toggle('active', l.getAttribute('href')==='#'+id));
+    }
+  });
+},{threshold:0.35});
+secs.forEach(s=>s && io.observe(s));
+
+// ---------- Scroll reveal ----------
+document.querySelectorAll('#invite section').forEach(sec=>{
+  const kids = sec.children;
+  gsap.set(kids, {opacity:0, y:24});
+  ScrollTrigger.create({
+    trigger:sec, start:'top 78%', once:true,
+    onEnter:()=>gsap.to(kids, {opacity:1, y:0, duration:.85, ease:'power2.out', stagger:.08})
+  });
+});
+</script>
+</body>
+</html>
