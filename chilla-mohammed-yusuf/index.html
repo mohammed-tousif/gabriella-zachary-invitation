@@ -49,8 +49,23 @@ body{
 .stars{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.8;}
 .stars svg{position:absolute;color:var(--gold);}
 
-section{position:relative;overflow:hidden;padding:60px 24px 52px;text-align:center;border-bottom:1px solid rgba(6,59,120,.12);}
-section:last-of-type{border-bottom:none;padding-bottom:110px;}
+.twinkle{position:absolute;color:var(--gold);font-size:14px;line-height:1;z-index:1;pointer-events:none;
+  animation:twinkle 3.4s ease-in-out infinite;}
+.twinkle.t2{animation-delay:.9s;}
+.twinkle.t3{animation-delay:1.8s;}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.8);}50%{opacity:1;transform:scale(1.15);}}
+
+@keyframes lantern-sway{0%,100%{transform:rotate(-5deg);}50%{transform:rotate(5deg);}}
+.anim-lantern{transform-origin:12px 0px;animation:lantern-sway 4.5s ease-in-out infinite;}
+
+@keyframes crescent-glow{0%,100%{filter:drop-shadow(0 0 4px rgba(214,168,74,.35));}50%{filter:drop-shadow(0 0 12px rgba(214,168,74,.75));}}
+.anim-crescent{animation:crescent-glow 3s ease-in-out infinite;}
+
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+.anim-bob{animation:bob 3.2s ease-in-out infinite;}
+
+section{position:relative;overflow:hidden;padding:clamp(44px,11vw,60px) clamp(18px,5vw,24px) clamp(40px,9vw,52px);text-align:center;border-bottom:1px solid rgba(6,59,120,.12);}
+section:last-of-type{border-bottom:none;padding-bottom:clamp(80px,20vw,110px);}
 
 .eyebrow{font-family:'Cormorant Garamond',serif;letter-spacing:4px;text-transform:uppercase;font-size:12px;color:var(--navy);opacity:.65;margin-bottom:10px;}
 
@@ -65,11 +80,11 @@ section:last-of-type{border-bottom:none;padding-bottom:110px;}
 }
 #opening.gone{display:none;}
 .opening-inner{max-width:340px;}
-.open-crescent{width:70px;height:70px;color:var(--gold);margin:0 auto 18px;filter:drop-shadow(0 0 10px rgba(214,168,74,.5));}
+.open-crescent{width:70px;height:70px;color:var(--gold);margin:0 auto 18px;}
 .open-bismillah{font-family:'Almarai',sans-serif;font-size:44px;color:var(--navy-dark);margin-bottom:8px;line-height:1.3;}
 .open-sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--navy);opacity:.75;font-size:13px;line-height:1.7;margin-bottom:30px;}
 .open-title{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,10vw,44px);color:var(--navy);letter-spacing:2px;line-height:1.1;max-width:100%;overflow-wrap:break-word;}
-.open-name{font-family:'Alex Brush',cursive;font-size:52px;color:var(--navy-dark);margin:14px 0 30px;}
+.open-name{font-family:'Alex Brush',cursive;font-size:clamp(36px,11vw,52px);color:var(--navy-dark);margin:14px 0 30px;max-width:100%;overflow-wrap:break-word;}
 .open-btn{
   padding:14px 40px;background:var(--navy);color:var(--white);border:none;border-radius:30px;
   font-family:'Cormorant Garamond',serif;letter-spacing:3px;text-transform:uppercase;font-size:13px;
@@ -80,7 +95,7 @@ section:last-of-type{border-bottom:none;padding-bottom:110px;}
 #invite{position:relative;z-index:1;opacity:0;}
 #invite.show{opacity:1;}
 
-.corner-svg{position:absolute;width:100px;height:120px;pointer-events:none;z-index:1;}
+.corner-svg{position:absolute;width:clamp(70px,22vw,100px);height:clamp(84px,26vw,120px);pointer-events:none;z-index:1;opacity:.9;}
 .corner-svg.tl{top:0;left:0;}
 .corner-svg.tr{top:0;right:0;transform:scaleX(-1);}
 .corner-svg.bl{bottom:0;left:0;transform:scaleY(-1);}
@@ -105,14 +120,14 @@ section:last-of-type{border-bottom:none;padding-bottom:110px;}
 
 /* info rows */
 .info-row{display:flex;align-items:center;gap:16px;text-align:left;max-width:290px;margin:0 auto;padding:16px 0;}
-.info-row>div{flex:1;min-width:0;}
+.info-row>div:not(.info-icon-circle){flex:1;min-width:0;}
 .info-icon-circle{
   flex:none;width:52px;height:52px;border-radius:50%;background:var(--pale);
   display:flex;align-items:center;justify-content:center;color:var(--navy);
 }
 .info-icon-circle svg{width:26px;height:26px;}
 .info-label{font-family:'Cormorant Garamond',serif;letter-spacing:2px;text-transform:uppercase;font-size:11px;color:var(--navy);opacity:.6;margin-bottom:2px;}
-.info-value{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:var(--navy-dark);overflow-wrap:break-word;}
+.info-value{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(15px,4.4vw,18px);color:var(--navy-dark);overflow-wrap:break-word;}
 .info-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--navy);opacity:.7;}
 .info-dash{max-width:290px;margin:0 auto;height:1px;
   background:repeating-linear-gradient(90deg,var(--baby) 0 6px, transparent 6px 12px);
@@ -124,16 +139,21 @@ p.lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;c
 
 /* dua plaque */
 .dua-plaque{
-  position:relative;margin:20px auto 0;max-width:280px;padding:26px 22px;
+  position:relative;margin:20px auto 0;max-width:min(280px,100%);padding:26px 22px;
   background:linear-gradient(160deg,#eef7ff,#dcefff);
   border:1px solid var(--baby);border-radius:50% 50% 8% 8% / 18% 18% 6% 6%;
   cursor:pointer;
 }
+.dua-plaque .dua-icon{width:28px;height:28px;color:var(--navy);margin:0 auto 8px;display:block;}
 .dua-plaque .dua-label{font-family:'Cormorant Garamond',serif;letter-spacing:3px;text-transform:uppercase;font-size:12px;color:var(--navy);opacity:.7;margin-bottom:10px;}
 .dua-plaque .dua-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--navy-dark);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .5s ease;}
 .dua-plaque.open .dua-text{max-height:260px;}
 .dua-plaque .ameen{display:block;margin-top:10px;font-style:italic;color:var(--navy);font-weight:600;}
 .dua-hint{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:1px;color:var(--navy);opacity:.55;margin-top:8px;}
+
+.fest-row{display:flex;align-items:center;justify-content:center;gap:18px;margin:6px 0 2px;}
+.fest-icon{width:24px;height:24px;color:var(--baby);}
+.fest-icon-lg{width:34px;height:34px;color:var(--gold);}
 
 .credit{margin-top:34px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;letter-spacing:1.5px;color:var(--gold);opacity:.85;}
 
@@ -151,6 +171,7 @@ nav.bottomnav a{
 nav.bottomnav a.active,nav.bottomnav a:active{opacity:1;color:var(--gold);}
 nav.bottomnav a:focus-visible{outline:2px solid var(--navy);outline-offset:2px;}
 nav.bottomnav a .ic{font-size:16px;}
+nav.bottomnav a .ic svg{width:19px;height:19px;display:block;}
 
 @media (min-width:480px){body{background:radial-gradient(ellipse at top, #16385f, #08192c);}}
 
@@ -217,6 +238,31 @@ nav.bottomnav a .ic{font-size:16px;}
       <path d="M16 30S4 18 4 12a12 12 0 1 1 24 0c0 6-12 18-12 18Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
       <circle cx="16" cy="12" r="4" fill="currentColor"/>
     </g>
+    <g id="icon-envelope">
+      <rect x="3" y="7" width="26" height="19" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M4 8.5 L16 18 L28 8.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="icon-hands">
+      <path d="M9 29c-3-2-4-6-4-10V9a2 2 0 0 1 4 0v7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M9 16V6a2 2 0 0 1 4 0v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M13 15V5a2 2 0 0 1 4 0v11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M23 29c3-2 4-6 4-10V9a2 2 0 0 0-4 0v7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M23 16V6a2 2 0 0 0-4 0v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M19 15V5a2 2 0 0 0-4 0v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </g>
+    <g id="icon-gift">
+      <rect x="4" y="13" width="24" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="4" y1="19" x2="28" y2="19" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="16" y1="13" x2="16" y2="29" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="2" y="9" width="28" height="5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M16 9c-1-5-8-6-8-1 0 2 3 1 8 1Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M16 9c1-5 8-6 8-1 0 2-3 1-8 1Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    </g>
+    <g id="icon-balloon">
+      <path d="M16 3a8 8 0 0 1 3 15.4c-.6.3-1 .8-1 1.6v1a2 2 0 0 1-4 0v-1c0-.8-.4-1.3-1-1.6A8 8 0 0 1 16 3Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M16 21v9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M15 24c1.5-1 1.5 1.5 0 .5" fill="none" stroke="currentColor" stroke-width="1.1"/>
+    </g>
     <g id="teddy">
       <!-- ears -->
       <circle cx="27" cy="30" r="11" fill="#E7C9A0"/>
@@ -248,7 +294,7 @@ nav.bottomnav a .ic{font-size:16px;}
 
 <div id="opening">
   <div class="opening-inner">
-    <svg class="open-crescent" viewBox="0 0 44 44"><use href="#crescent-star"/></svg>
+    <svg class="open-crescent anim-crescent" viewBox="0 0 44 44"><use href="#crescent-star"/></svg>
     <div class="open-bismillah" lang="ar" dir="rtl">﷽</div>
     <div class="open-sub">With the blessings of Allah<br>and the love of our family</div>
     <div class="open-title">CHILLA<br>CEREMONY</div>
@@ -260,7 +306,7 @@ nav.bottomnav a .ic{font-size:16px;}
 <div class="stage">
 <aside class="side-panel">
   <div class="side-inner">
-    <svg class="side-crescent" viewBox="0 0 44 44"><use href="#crescent-star"/></svg>
+    <svg class="side-crescent anim-crescent" viewBox="0 0 44 44"><use href="#crescent-star"/></svg>
     <div class="side-eyebrow">Chilla Ceremony</div>
     <div class="side-title">of our beloved son</div>
     <div class="side-name">Mohammed Yusuf</div>
@@ -272,8 +318,10 @@ nav.bottomnav a .ic{font-size:16px;}
 
     <!-- COVER -->
     <section id="cover">
-      <svg class="corner-svg tl" viewBox="0 0 100 120" fill="none"><use href="#floral" color="#8FB8DE"/><g transform="translate(58,2)"><use href="#lantern"/></g></svg>
-      <svg class="corner-svg tr" viewBox="0 0 100 120" fill="none"><g transform="translate(10,4) scale(1.3)"><use href="#crescent-star" color="#D6A84A"/></g></svg>
+      <svg class="corner-svg tl" viewBox="0 0 100 120" fill="none"><use href="#floral" color="#8FB8DE"/><g class="anim-lantern" transform="translate(58,2)"><use href="#lantern"/></g></svg>
+      <svg class="corner-svg tr" viewBox="0 0 100 120" fill="none"><g class="anim-crescent" transform="translate(10,4) scale(1.3)"><use href="#crescent-star" color="#D6A84A"/></g></svg>
+      <span class="twinkle t1" style="top:14%;right:28%;">✦</span>
+      <span class="twinkle t2" style="top:26%;left:14%;">✦</span>
 
       <div class="bismillah" lang="ar" dir="rtl">﷽</div>
       <div class="bismillah-en">With the blessings of Allah<br>and the love of our family</div>
@@ -329,10 +377,11 @@ nav.bottomnav a .ic{font-size:16px;}
 
     <!-- DUA -->
     <section id="dua">
-      <svg class="corner-svg tr" viewBox="0 0 100 120" fill="none"><g transform="translate(10,6)"><use href="#lantern"/></g></svg>
+      <svg class="corner-svg tr" viewBox="0 0 100 120" fill="none"><g class="anim-lantern" transform="translate(10,6)"><use href="#lantern"/></g></svg>
       <p class="lead" style="max-width:260px;">May Allah make him a righteous child, fill his heart with Imaan, his life with barakah, and his steps with goodness.<br><span style="font-weight:600;">Ameen.</span></p>
 
       <div class="dua-plaque" id="dua-plaque">
+        <svg class="dua-icon" viewBox="0 0 32 32"><use href="#icon-hands"/></svg>
         <div class="dua-label">A Special Dua</div>
         <div class="dua-text" id="dua-text">
           May Allah keep our little one under His protection, grant him a healthy and happy life, and make him a source of khair for this world and the Hereafter.
@@ -346,7 +395,12 @@ nav.bottomnav a .ic{font-size:16px;}
     <section id="celebrate">
       <svg class="corner-svg bl" viewBox="0 0 100 120" fill="none"><use href="#floral" color="#8FB8DE"/></svg>
       <div class="eyebrow">Join The Celebration</div>
-      <svg viewBox="0 0 100 110" style="width:150px;height:auto;margin:6px auto 4px;display:block;"><use href="#teddy"/></svg>
+      <div class="fest-row">
+        <svg class="fest-icon" viewBox="0 0 32 32"><use href="#icon-balloon"/></svg>
+        <svg class="fest-icon fest-icon-lg anim-crescent" viewBox="0 0 44 44"><use href="#crescent-star"/></svg>
+        <svg class="fest-icon" viewBox="0 0 32 32"><use href="#icon-gift"/></svg>
+      </div>
+      <svg class="anim-bob" viewBox="0 0 100 110" style="width:150px;height:auto;margin:6px auto 4px;display:block;"><use href="#teddy"/></svg>
       <p class="lead">A joyful gathering to thank Allah for this little blessing — come celebrate with us.</p>
       <div class="credit">Made with love by Tousif</div>
     </section>
@@ -354,10 +408,10 @@ nav.bottomnav a .ic{font-size:16px;}
   </div>
 
   <nav class="bottomnav">
-    <a href="#cover" class="nav-link active"><span class="ic">✦</span>Invitation</a>
-    <a href="#details" class="nav-link"><span class="ic">◉</span>Details</a>
-    <a href="#dua" class="nav-link"><span class="ic">☾</span>Dua</a>
-    <a href="#celebrate" class="nav-link"><span class="ic">♥</span>Celebrate</a>
+    <a href="#cover" class="nav-link active"><span class="ic"><svg viewBox="0 0 32 32"><use href="#icon-envelope"/></svg></span>Invitation</a>
+    <a href="#details" class="nav-link"><span class="ic"><svg viewBox="0 0 32 32"><use href="#icon-cal"/></svg></span>Details</a>
+    <a href="#dua" class="nav-link"><span class="ic"><svg viewBox="0 0 32 32"><use href="#icon-hands"/></svg></span>Dua</a>
+    <a href="#celebrate" class="nav-link"><span class="ic"><svg viewBox="0 0 32 32"><use href="#icon-gift"/></svg></span>Celebrate</a>
   </nav>
 </div>
 </div>
@@ -397,13 +451,46 @@ const io = new IntersectionObserver((entries)=>{
 },{threshold:0.35});
 secs.forEach(s=>s && io.observe(s));
 
-// ---------- Scroll reveal ----------
+// ---------- Scroll reveal (varied per element type) ----------
 document.querySelectorAll('#invite section').forEach(sec=>{
-  const kids = sec.children;
-  gsap.set(kids, {opacity:0, y:24});
+  const corners = sec.querySelectorAll('.corner-svg');
+  const dividers = sec.querySelectorAll('.divider');
+  const icons = sec.querySelectorAll('.info-icon-circle');
+  const headings = sec.querySelectorAll('.bismillah, .event-title, .child-name, .open-title');
+  const dashes = sec.querySelectorAll('.info-dash');
+  const excluded = new Set([...corners, ...dividers, ...dashes, ...headings]);
+  const rest = Array.from(sec.children).filter(el=>!excluded.has(el));
+
+  gsap.set(corners, {opacity:0, scale:.85, transformOrigin:'center'});
+  gsap.set(dividers, {opacity:0, scaleX:0});
+  gsap.set(icons, {opacity:0, scale:.4});
+  gsap.set(headings, {opacity:0, y:18, scale:.94});
+  gsap.set(dashes, {opacity:0, scaleX:0});
+  gsap.set(rest, {opacity:0, y:22});
+
   ScrollTrigger.create({
-    trigger:sec, start:'top 78%', once:true,
-    onEnter:()=>gsap.to(kids, {opacity:1, y:0, duration:.85, ease:'power2.out', stagger:.08})
+    trigger:sec, start:'top 80%', once:true,
+    onEnter:()=>{
+      const tl = gsap.timeline();
+      tl.to(corners, {opacity:1, scale:1, duration:1, ease:'power2.out'}, 0)
+        .to(rest, {opacity:1, y:0, duration:.8, ease:'power2.out', stagger:.09}, 0.05)
+        .to(headings, {opacity:1, y:0, scale:1, duration:.9, ease:'back.out(1.4)', stagger:.1}, 0.05)
+        .to(icons, {opacity:1, scale:1, duration:.65, ease:'back.out(2.2)', stagger:.12}, 0.15)
+        .to(dividers, {opacity:1, scaleX:1, duration:.6, ease:'power2.out'}, 0.1)
+        .to(dashes, {opacity:1, scaleX:1, duration:.6, ease:'power2.out'}, 0.2);
+    }
+  });
+});
+
+// ---------- Subtle parallax on sky + corner ornaments ----------
+gsap.to('.sky', {
+  y:-40, ease:'none',
+  scrollTrigger:{trigger:'#invite', start:'top top', end:'bottom bottom', scrub:1}
+});
+document.querySelectorAll('.corner-svg').forEach((el,i)=>{
+  gsap.to(el, {
+    y: i%2===0 ? -18 : 18, ease:'none',
+    scrollTrigger:{trigger:el.closest('section'), start:'top bottom', end:'bottom top', scrub:1}
   });
 });
 </script>
