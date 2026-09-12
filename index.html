@@ -3,27 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Gabriella & Zachary</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Amiri:ital@0;1&display=swap">
+<title>Sumera &amp; Hayat</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Amiri:ital@0;1&family=Aref+Ruqaa:wght@400;700&display=swap">
 <style>
 :root{
-  --cream:#F4E8D5;
-  --paper:#EFE0C6;
-  --burgundy:#4A1718;
-  --wine:#641F24;
-  --gold:#B18A52;
-  --brown:#3B2923;
-  --rose:#9B4B4E;
-  --green:#69705A;
-  --emerald:#2F4F3E;
-  --emerald-light:#4C7A61;
+  --ivory:#FBF6EA;
+  --paper:#F4ECD8;
+  --ink:#211A12;
+  --charcoal:#2E2620;
+  --gold:#B8902E;
+  --gold-deep:#8C6A1E;
+  --gold-light:#E4CE8E;
+  --silver:#C9C4B8;
+  --slate:#7C776C;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
 body{
-  margin:0;background:var(--brown);
+  margin:0;background:var(--charcoal);
   font-family:'EB Garamond',Georgia,serif;
-  color:var(--brown);
+  color:var(--ink);
   display:flex;justify-content:center;
   min-height:100vh;
   overflow-x:hidden;
@@ -33,84 +32,84 @@ body{
 }
 
 .phone{
-  width:100%;max-width:420px;min-height:100vh;
-  background:var(--cream);position:relative;
+  width:100%;max-width:430px;min-height:100vh;
+  background:var(--ivory);position:relative;
   box-shadow:0 0 60px rgba(0,0,0,.5);
   overflow-x:hidden;
 }
 
-/* ---------- paper texture ---------- */
+/* ---------- silver floral tile pattern ---------- */
 .texture{
-  position:absolute;inset:0;pointer-events:none;z-index:0;
-  background-image:
-    radial-gradient(circle at 20% 10%, rgba(177,138,82,.10), transparent 40%),
-    radial-gradient(circle at 80% 90%, rgba(100,31,36,.08), transparent 45%),
-    repeating-radial-gradient(circle at 50% 50%, rgba(59,41,35,.015) 0 1px, transparent 1px 3px);
+  position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.16;
   mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23B7B0A0' stroke-width='0.6'%3E%3Cpath d='M80 30c3 8-3 14 0 22M80 108c3 8-3 14 0 22M30 80c8 3 14-3 22 0M108 80c8 3 14-3 22 0'/%3E%3Ccircle cx='80' cy='80' r='5'/%3E%3Ccircle cx='80' cy='54' r='3'/%3E%3Ccircle cx='80' cy='106' r='3'/%3E%3Ccircle cx='54' cy='80' r='3'/%3E%3Ccircle cx='106' cy='80' r='3'/%3E%3Ccircle cx='80' cy='80' r='1.2' fill='%23B7B0A0'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:160px 160px;
 }
 
-/* ================= floral ornaments ================= */
-.corner-svg{position:absolute;width:92px;height:92px;pointer-events:none;opacity:.9;z-index:1;}
-.corner-svg.tl{top:6px;left:-6px;}
-.corner-svg.tr{top:6px;right:-6px;transform:scaleX(-1);}
-.corner-svg.bl{bottom:6px;left:-6px;transform:scaleY(-1);}
-.corner-svg.br{bottom:6px;right:-6px;transform:scale(-1,-1);}
+/* ================= floral / ornamental corner motifs ================= */
+.corner-svg{position:absolute;width:84px;height:84px;pointer-events:none;opacity:.9;z-index:1;color:var(--gold);}
+.corner-svg.tl{top:10px;left:8px;}
+.corner-svg.tr{top:10px;right:8px;transform:scaleX(-1);}
+.corner-svg.bl{bottom:10px;left:8px;transform:scaleY(-1);}
+.corner-svg.br{bottom:10px;right:8px;transform:scale(-1,-1);}
 section{position:relative;overflow:hidden;}
 
 /* ================= ENVELOPE ================= */
 #envelope-screen{
   position:fixed;inset:0;z-index:50;
   display:flex;align-items:center;justify-content:center;
-  background:radial-gradient(ellipse at center, #2c1414 0%, #1a0d0d 70%, #0d0606 100%);
+  background:radial-gradient(ellipse at center, #34291a 0%, #201808 70%, #120c04 100%);
   perspective:1400px;
 }
 .env-wrap{width:82%;max-width:340px;aspect-ratio:3/2;position:relative}
 .env-body{
   position:absolute;inset:0;
-  background:linear-gradient(160deg,#5a2a1f,#3b1712 60%,#2b0f0d);
+  background:linear-gradient(160deg,#efe4c6,#e2d3a8 60%,#d6c290);
   border-radius:6px;
-  box-shadow:0 20px 60px rgba(0,0,0,.6), inset 0 0 40px rgba(177,138,82,.15);
+  box-shadow:0 20px 60px rgba(0,0,0,.6), inset 0 0 40px rgba(184,144,46,.25);
   background-image:
-    repeating-linear-gradient(45deg, rgba(177,138,82,.05) 0 2px, transparent 2px 14px);
+    repeating-linear-gradient(45deg, rgba(140,106,30,.06) 0 2px, transparent 2px 14px);
 }
 .env-body::before{
-  content:"";position:absolute;inset:8px;border:1px solid rgba(177,138,82,.35);
+  content:"";position:absolute;inset:8px;border:1px solid rgba(140,106,30,.45);
   border-radius:3px;pointer-events:none;
 }
-.env-body .env-motif{position:absolute;width:60px;height:60px;opacity:.5;}
+.env-body .env-motif{position:absolute;width:56px;height:56px;opacity:.55;color:var(--gold-deep);}
 .env-body .env-motif.a{top:10px;left:10px;}
 .env-body .env-motif.b{bottom:10px;right:10px;transform:rotate(180deg);}
 .card{
   position:absolute;left:8%;right:8%;top:14%;bottom:14%;
-  background:linear-gradient(170deg,#fbf3de,#f4e8d5);
+  background:linear-gradient(170deg,#fdf9ef,#f4ecd8);
   border-radius:3px;box-shadow:0 10px 30px rgba(0,0,0,.4);
-  z-index:2;display:flex;align-items:center;justify-content:center;
-  font-family:'Great Vibes',cursive;font-size:22px;color:var(--wine);
+  z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--gold-deep);
+  letter-spacing:2px;text-transform:uppercase;
   opacity:0;
 }
+.card .card-sh{font-family:'Great Vibes',cursive;font-size:30px;color:var(--ink);font-style:normal;letter-spacing:0;}
 .flap{position:absolute;left:0;width:100%;height:100%;transform-origin:top center;
   clip-path:polygon(0 0,100% 0,50% 62%);
-  background:linear-gradient(200deg,#6b3325,#3b1712 70%);
-  box-shadow:0 6px 20px rgba(0,0,0,.4) inset;
+  background:linear-gradient(200deg,#e2d3a8,#c9b483 70%);
+  box-shadow:0 6px 20px rgba(0,0,0,.35) inset;
   z-index:4;
 }
 .seal{
   position:absolute;top:50%;left:50%;width:72px;height:72px;border-radius:50%;
   transform:translate(-50%,-50%);
-  background:radial-gradient(circle at 35% 30%, #d9c391, #b18a52 55%, #8a6636 100%);
-  box-shadow:0 6px 14px rgba(0,0,0,.5), inset 0 2px 4px rgba(255,255,255,.4), inset 0 -6px 10px rgba(0,0,0,.35);
+  background:radial-gradient(circle at 35% 30%, #f3e2ab, #c9a227 55%, #8c6a1e 100%);
+  box-shadow:0 6px 14px rgba(0,0,0,.5), inset 0 2px 4px rgba(255,255,255,.5), inset 0 -6px 10px rgba(0,0,0,.3);
   z-index:5;display:flex;align-items:center;justify-content:center;
-  font-family:'Great Vibes',cursive;color:#4a1718;font-size:26px;cursor:pointer;
+  font-family:'Great Vibes',cursive;color:#2E2620;font-size:24px;cursor:pointer;
 }
 .seal .glow{
   position:absolute;inset:-30px;border-radius:50%;
-  background:radial-gradient(circle, rgba(255,225,160,.9), transparent 70%);
+  background:radial-gradient(circle, rgba(255,238,190,.9), transparent 70%);
   opacity:0;pointer-events:none;
 }
 .env-hint{
   position:absolute;bottom:-46px;left:0;right:0;text-align:center;
-  color:#c9a978;font-size:13px;letter-spacing:3px;text-transform:uppercase;
-  font-family:'Cormorant Garamond',serif;opacity:.85;
+  color:#e4cE8e;font-size:13px;letter-spacing:3px;text-transform:uppercase;
+  font-family:'Cormorant Garamond',serif;opacity:.9;
 }
 #envelope-screen.gone{display:none;}
 
@@ -119,156 +118,238 @@ section{position:relative;overflow:hidden;}
 #invite.show{opacity:1;}
 
 section{
-  padding:70px 26px 60px;text-align:center;
-  border-bottom:1px solid rgba(177,138,82,.35);
+  padding:64px 24px 56px;text-align:center;
+  border-bottom:1px solid rgba(184,144,46,.3);
   scroll-margin-top:20px;
 }
-section:last-of-type{border-bottom:none;padding-bottom:120px;}
-
-.reveal{opacity:0;transform:translateY(28px);}
+section:last-of-type{border-bottom:none;padding-bottom:110px;}
 
 .eyebrow{
-  font-family:'Cormorant Garamond',serif;letter-spacing:5px;text-transform:uppercase;
-  font-size:12px;color:var(--wine);margin-bottom:14px;
+  font-family:'Cormorant Garamond',serif;letter-spacing:4px;text-transform:uppercase;
+  font-size:12px;color:var(--slate);margin-bottom:12px;
 }
-.bismillah{font-family:'Amiri',serif;font-size:24px;color:var(--emerald);margin-bottom:6px;}
-.bismillah-en{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--emerald-light);
-  font-size:12px;letter-spacing:1px;margin-bottom:22px;}
-.crescent-accent{width:26px;height:26px;color:var(--emerald);margin:0 auto 10px;display:block;}
-.date-line{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:18px;}
+.gold-heading{
+  font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold-deep);font-size:22px;margin:10px 0;
+  background:linear-gradient(160deg,var(--gold-light),var(--gold-deep));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
 
-.names{font-family:'Great Vibes',cursive;font-size:64px;color:var(--burgundy);line-height:1.15;margin:0;text-wrap:balance;}
-.amp{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:26px;margin:6px 0;}
+/* monogram */
+.monogram{font-family:'Great Vibes',cursive;font-size:56px;color:var(--ink);line-height:1;margin-bottom:6px;}
+.monogram .amp{color:var(--gold);}
+.names-caps{font-family:'Cormorant Garamond',serif;letter-spacing:6px;font-weight:600;font-size:18px;color:var(--ink);margin-bottom:10px;}
+.tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--slate);font-size:13px;letter-spacing:.5px;line-height:1.7;margin-bottom:6px;}
 
-.divider{width:70px;height:1px;background:var(--gold);margin:26px auto;position:relative;}
-.divider::before{content:"❧";position:absolute;top:-11px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:16px;background:var(--cream);padding:0 8px;}
+/* arabic */
+.arabic-lg{font-family:'Aref Ruqaa',serif;font-size:34px;color:var(--gold-deep);line-height:1.2;}
+.arabic-md{font-family:'Aref Ruqaa',serif;font-size:20px;color:var(--ink);margin-top:4px;}
+.bismillah{font-family:'Amiri',serif;font-size:26px;color:var(--ink);margin-bottom:8px;}
+.bismillah-en{font-family:'Cormorant Garamond',serif;letter-spacing:2px;text-transform:uppercase;color:var(--ink);font-size:13px;margin-bottom:4px;}
+.bismillah-en2{font-family:'Cormorant Garamond',serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate);font-size:11px;}
 
-p.lead{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--brown);line-height:1.7;max-width:300px;margin:0 auto;}
+.divider{width:64px;height:1px;background:var(--gold);margin:22px auto;position:relative;}
+.divider::before{content:"❦";position:absolute;top:-11px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:15px;background:var(--ivory);padding:0 8px;}
 
-/* countdown */
-.countdown{display:flex;justify-content:center;gap:18px;margin:26px 0 8px;font-variant-numeric:tabular-nums;}
-.cbox{display:flex;flex-direction:column;align-items:center;}
-.cbox .num{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--wine);font-weight:600;}
-.cbox .lbl{font-size:10px;letter-spacing:2px;color:var(--brown);text-transform:uppercase;margin-top:2px;}
-.colon{font-size:32px;color:var(--gold);align-self:flex-start;margin-top:4px;}
+p.lead{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--ink);line-height:1.75;max-width:290px;margin:0 auto;}
 
-/* schedule */
-.schedule{position:relative;margin:30px auto 0;max-width:280px;text-align:left;}
-.schedule::before{content:"";position:absolute;left:50%;top:6px;bottom:6px;width:1px;background:var(--gold);}
-.event{position:relative;display:flex;align-items:center;margin:26px 0;}
-.event:nth-child(odd){justify-content:flex-end;padding-right:calc(50% + 18px);}
-.event:nth-child(even){justify-content:flex-start;padding-left:calc(50% + 18px);}
-.event .time{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--wine);letter-spacing:1px;}
-.event .label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--brown);margin-top:2px;}
-.event .dot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:var(--emerald);box-shadow:0 0 0 3px var(--cream), 0 0 0 4px var(--gold);}
+/* ---------- cover / hero ---------- */
+.cover-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;text-align:left;margin-bottom:8px;}
+.cover-left{text-align:left;}
+.cover-right{text-align:center;padding-top:4px;}
+.cover-flourish{font-size:12px;color:var(--gold);letter-spacing:2px;line-height:1.8;}
+
+/* central diamond emblem */
+.emblem-wrap{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px 0 10px;}
+.emblem{position:relative;width:172px;height:172px;display:flex;align-items:center;justify-content:center;flex:none;}
+.emblem svg{position:absolute;inset:0;width:100%;height:100%;}
+.emblem-text{position:relative;font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);font-size:14px;line-height:1.9;text-align:center;}
+.date-vert{display:flex;flex-direction:column;align-items:center;font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--ink);font-size:26px;line-height:1.25;letter-spacing:1px;}
+.date-vert span{display:block;}
+.date-vert .slash{color:var(--gold);font-size:14px;}
+
+/* recipient / sender */
+.rule-line{height:1px;background:var(--gold);opacity:.55;margin:18px 0;}
+.recip{text-align:left;font-family:'Cormorant Garamond',serif;}
+.recip .lbl{letter-spacing:3px;text-transform:uppercase;font-size:12px;color:var(--slate);margin-bottom:4px;}
+.recip .msg{font-style:italic;font-size:16px;color:var(--ink);margin:10px 0 4px;}
+.recip .msg2{font-size:15px;color:var(--ink);}
+.sender{text-align:center;font-family:'Cormorant Garamond',serif;margin-top:34px;}
+.sender .lbl{letter-spacing:3px;text-transform:uppercase;font-size:12px;color:var(--slate);margin-bottom:8px;}
+.sender .names{font-weight:600;letter-spacing:1.5px;font-size:17px;color:var(--ink);margin-bottom:8px;}
+.sender .addr{font-size:13px;color:var(--slate);line-height:1.6;margin-bottom:8px;}
+.sender a{color:var(--gold-deep);text-decoration:none;border-bottom:1px solid var(--gold-light);}
+
+/* ---------- arch frame ---------- */
+.arch-frame{position:relative;margin:0 auto;padding:34px 14px 26px;max-width:100%;}
+.arch-top{width:100%;height:34px;color:var(--gold);display:block;}
+.arch-frame .arch-sides{border-left:1px solid rgba(184,144,46,.55);border-right:1px solid rgba(184,144,46,.55);padding:14px 14px 0;}
+.arch-frame .arch-sides p.lead,
+.arch-frame .arch-sides .gold-heading,
+.arch-frame .arch-sides .couple-name,
+.arch-frame .arch-sides .family-note{max-width:100%;}
+.arch-bottom{width:60%;margin:14px auto 0;height:16px;color:var(--gold);display:block;}
+
+/* elder blessing */
+.gold-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;color:var(--gold-deep);font-size:16px;line-height:1.6;}
+
+/* nikah invite */
+.couple-block{margin:18px 0;}
+.couple-name{font-family:'Great Vibes',cursive;font-size:40px;color:var(--gold-deep);line-height:1.1;}
+.couple-deg{font-family:'Cormorant Garamond',serif;letter-spacing:2px;font-size:13px;color:var(--ink);margin-top:2px;}
+.with-word{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--slate);font-size:14px;margin:10px 0;}
+.family-note{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--slate);max-width:270px;margin:8px auto 0;line-height:1.6;}
+
+/* icon rows: date/time/venue */
+.info-icon{width:34px;height:34px;color:var(--gold);margin:0 auto 10px;display:block;}
+.info-block{margin:8px 0 30px;}
+.info-block:last-child{margin-bottom:0;}
+.day-name{font-family:'Cormorant Garamond',serif;letter-spacing:3px;text-transform:uppercase;font-size:13px;color:var(--slate);margin-bottom:6px;}
+.big-num{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:46px;color:var(--gold-deep);line-height:1;}
+.month-line{font-family:'Cormorant Garamond',serif;letter-spacing:2px;text-transform:uppercase;font-size:14px;color:var(--ink);margin-top:6px;}
+.hijri-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--slate);margin-top:4px;}
+.time-num{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;color:var(--gold-deep);}
 
 /* venue */
-.venue-illust{margin:20px auto 18px;max-width:300px;}
-.venue-illust svg{width:100%;height:auto;display:block;}
+.venue-name{font-family:'Great Vibes',cursive;font-size:36px;color:var(--ink);margin:4px 0 8px;}
+.venue-addr{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--slate);line-height:1.6;margin-bottom:18px;}
+.qr-row{display:flex;align-items:center;justify-content:center;gap:16px;margin:10px 0 18px;flex-wrap:wrap;}
+.qr-box{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.qr-box img{width:96px;height:96px;border:1px solid var(--gold);border-radius:4px;background:#fff;padding:4px;}
+.qr-box span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;color:var(--slate);}
 a.mapbtn{
-  display:inline-block;margin-top:14px;padding:11px 30px;border:1px solid var(--wine);
-  color:var(--wine);text-decoration:none;letter-spacing:2px;font-size:11px;text-transform:uppercase;
+  display:inline-block;margin-top:6px;padding:11px 30px;border:1px solid var(--gold-deep);
+  color:var(--gold-deep);text-decoration:none;letter-spacing:2px;font-size:11px;text-transform:uppercase;
   border-radius:2px;transition:all .25s ease;font-family:'Cormorant Garamond',serif;
 }
-a.mapbtn:active{background:var(--wine);color:var(--cream);}
+a.mapbtn:active{background:var(--gold-deep);color:var(--ivory);}
 
-/* party */
-.party-illust{max-width:260px;margin:22px auto;}
-.party-illust svg{width:100%;height:auto;display:block;}
+/* compliments */
+.compliments{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--slate);line-height:1.8;max-width:280px;margin:0 auto;}
+.compliments .org{color:var(--ink);font-weight:600;letter-spacing:.5px;}
 
 /* rsvp */
-.wax-mini{width:54px;height:54px;border-radius:50%;margin:0 auto 18px;
-  background:radial-gradient(circle at 35% 30%,#d9c391,#b18a52 55%,#8a6636 100%);
-  box-shadow:0 4px 10px rgba(0,0,0,.35), inset 0 2px 3px rgba(255,255,255,.4);}
-
+.wax-mini{width:52px;height:52px;border-radius:50%;margin:0 auto 18px;
+  background:radial-gradient(circle at 35% 30%,#f3e2ab,#c9a227 55%,#8c6a1e 100%);
+  box-shadow:0 4px 10px rgba(0,0,0,.3), inset 0 2px 3px rgba(255,255,255,.45);}
 .rsvp-btn{
-  margin-top:20px;padding:14px 44px;background:var(--wine);color:var(--cream);
+  margin-top:18px;padding:14px 44px;background:var(--gold-deep);color:var(--ivory);
   border:none;border-radius:2px;font-family:'Cormorant Garamond',serif;letter-spacing:3px;
-  text-transform:uppercase;font-size:13px;cursor:pointer;box-shadow:0 6px 18px rgba(74,23,24,.35);
+  text-transform:uppercase;font-size:13px;cursor:pointer;box-shadow:0 6px 18px rgba(140,106,30,.35);
 }
-
-form.rsvp-form{max-width:300px;margin:24px auto 0;text-align:left;display:none;}
+form.rsvp-form{max-width:290px;margin:22px auto 0;text-align:left;display:none;}
 form.rsvp-form.show{display:block;animation:fadeUp .5s ease;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-form.rsvp-form label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--wine);margin:16px 0 6px;}
+form.rsvp-form label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep);margin:14px 0 6px;}
 form.rsvp-form input[type=text],form.rsvp-form input[type=number]{
-  width:100%;padding:9px 10px;border:1px solid var(--gold);background:#fffaf0;
-  border-radius:2px;font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--brown);
+  width:100%;padding:9px 10px;border:1px solid var(--gold);background:#fffdf6;
+  border-radius:2px;font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--ink);
 }
 .radio-row{display:flex;gap:22px;margin-top:4px;}
-.radio-row label{display:flex;align-items:center;gap:6px;margin:0;font-size:13px;text-transform:none;letter-spacing:0;color:var(--brown);}
+.radio-row label{display:flex;align-items:center;gap:6px;margin:0;font-size:13px;text-transform:none;letter-spacing:0;color:var(--ink);}
 form.rsvp-form button{
-  margin-top:22px;width:100%;padding:13px;background:var(--burgundy);color:var(--cream);
+  margin-top:20px;width:100%;padding:13px;background:var(--ink);color:var(--ivory);
   border:none;letter-spacing:2px;text-transform:uppercase;font-size:12px;border-radius:2px;cursor:pointer;
 }
-.thankyou{display:none;text-align:center;margin-top:24px;color:var(--wine);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;}
+.thankyou{display:none;text-align:center;margin-top:22px;color:var(--gold-deep);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;}
 .thankyou.show{display:block;animation:fadeUp .5s ease;}
 
-.credit{margin-top:56px;font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:11px;letter-spacing:1.5px;color:var(--gold);opacity:.7;}
+/* closing */
+.closing-msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink);line-height:1.8;max-width:270px;margin:0 auto 22px;}
+.credit{margin-top:40px;font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:11px;letter-spacing:1.5px;color:var(--gold);opacity:.75;}
 
 /* bottom nav */
 nav.bottomnav{
   position:sticky;bottom:0;left:0;right:0;z-index:10;
   display:flex;justify-content:space-around;align-items:center;
-  padding:14px 10px 18px;background:rgba(244,232,213,.92);backdrop-filter:blur(6px);
-  border-top:1px solid rgba(177,138,82,.4);
+  padding:14px 10px 18px;background:rgba(251,246,234,.94);backdrop-filter:blur(6px);
+  border-top:1px solid rgba(184,144,46,.4);
 }
 nav.bottomnav a{
   display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;
-  color:var(--brown);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
-  font-family:'Cormorant Garamond',serif;opacity:.75;transition:opacity .2s ease,color .2s ease;
+  color:var(--ink);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
+  font-family:'Cormorant Garamond',serif;opacity:.7;transition:opacity .2s ease,color .2s ease;
 }
-nav.bottomnav a.active,nav.bottomnav a:active{opacity:1;color:var(--wine);}
-nav.bottomnav a:focus-visible{outline:2px solid var(--wine);outline-offset:2px;}
+nav.bottomnav a.active,nav.bottomnav a:active{opacity:1;color:var(--gold-deep);}
+nav.bottomnav a:focus-visible{outline:2px solid var(--gold-deep);outline-offset:2px;}
 nav.bottomnav a .ic{font-size:16px;}
 
-@media (min-width:480px){body{background:radial-gradient(ellipse at top, #5a2a1f, #1a0d0d);}}
+@media (min-width:480px){body{background:radial-gradient(ellipse at top, #3a2f1e, #16110a);}}
 
 /* ================= LAPTOP / WIDE VIEWPORT ================= */
 .stage{width:100%;display:flex;justify-content:center;}
 .side-panel{display:none;}
 @media (min-width:900px){
-  body{align-items:center;background:linear-gradient(150deg,#2c1414 0%,#170b0a 65%,#0d0606 100%);}
+  body{align-items:center;background:linear-gradient(150deg,#34291a 0%,#1c150a 65%,#100b04 100%);}
   .stage{max-width:1080px;min-height:100vh;align-items:stretch;}
   .side-panel{
     display:flex;flex:1;min-width:320px;position:sticky;top:0;align-self:flex-start;height:100vh;
     align-items:center;justify-content:center;overflow:hidden;
     background:
-      radial-gradient(ellipse at 30% 20%, rgba(177,138,82,.16), transparent 55%),
-      linear-gradient(200deg,#3b1712,#1a0d0d 70%);
+      radial-gradient(ellipse at 30% 20%, rgba(184,144,46,.18), transparent 55%),
+      linear-gradient(200deg,#3a2f1e,#16110a 70%);
   }
   .side-panel::before{
-    content:"";position:absolute;inset:24px;border:1px solid rgba(177,138,82,.28);
+    content:"";position:absolute;inset:24px;border:1px solid rgba(184,144,46,.3);
   }
   .side-inner{position:relative;text-align:center;padding:40px;}
-  .side-monogram{width:120px;height:120px;margin:0 auto 22px;opacity:.85;}
+  .side-monogram{font-family:'Great Vibes',cursive;font-size:64px;color:var(--gold-light);margin-bottom:18px;}
   .side-eyebrow{font-family:'Cormorant Garamond',serif;letter-spacing:6px;text-transform:uppercase;
-    font-size:13px;color:#c9a978;margin-bottom:14px;}
-  .side-date{font-family:'Cormorant Garamond',serif;font-style:italic;color:#e8cf9e;font-size:17px;letter-spacing:2px;margin-bottom:22px;}
-  .side-names{font-family:'Great Vibes',cursive;font-size:52px;color:#f4e8d5;line-height:1.3;}
-  .side-names .amp{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;color:#c9a978;font-size:22px;margin:4px 0;}
+    font-size:13px;color:#d8c07f;margin-bottom:14px;}
+  .side-date{font-family:'Cormorant Garamond',serif;font-style:italic;color:#e8d8a8;font-size:17px;letter-spacing:2px;margin-bottom:22px;}
+  .side-names{font-family:'Cormorant Garamond',serif;letter-spacing:5px;text-transform:uppercase;font-size:20px;color:#fbf6ea;font-weight:600;}
+  .side-tag{font-family:'Cormorant Garamond',serif;font-style:italic;color:#c9b483;font-size:13px;margin-top:14px;line-height:1.7;}
   .phone{flex:none;width:440px;min-height:100vh;box-shadow:0 30px 90px rgba(0,0,0,.6);}
 }
 </style>
 
-<!-- hidden defs: reusable botanical motif -->
+<!-- hidden defs: reusable ornaments -->
 <svg width="0" height="0" style="position:absolute">
   <defs>
     <g id="botanical">
-      <path d="M4 88 C 10 60, 6 40, 22 18" fill="none" stroke="#69705A" stroke-width="2" stroke-linecap="round"/>
-      <path d="M22 18 C 30 26, 34 14, 44 16" fill="none" stroke="#69705A" stroke-width="2" stroke-linecap="round"/>
-      <ellipse cx="30" cy="30" rx="10" ry="6" fill="#8a9678" transform="rotate(-40 30 30)"/>
-      <ellipse cx="14" cy="52" rx="9" ry="5" fill="#8a9678" transform="rotate(30 14 52)"/>
-      <circle cx="24" cy="14" r="9" fill="#8a4a4c"/>
-      <circle cx="18" cy="9" r="7" fill="#9B4B4E"/>
-      <circle cx="30" cy="9" r="7" fill="#9B4B4E"/>
-      <circle cx="24" cy="6" r="7" fill="#B15c5e"/>
-      <circle cx="24" cy="10" r="4.5" fill="#4A1718"/>
+      <path d="M4 78c8-24 2-40 18-58" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M22 20c8 6 12-4 20-2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M14 46c8 4 12-4 20 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="24" cy="14" r="7" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="24" cy="14" r="3" fill="currentColor"/>
+      <circle cx="10" cy="70" r="4" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <circle cx="34" cy="34" r="3" fill="currentColor" opacity=".6"/>
     </g>
-    <g id="crescent-star">
-      <path d="M17 2 A15 15 0 1 0 17 32 A12 12 0 1 1 17 2 Z" fill="currentColor"/>
-      <path d="M27 6 l1.6 3.4 3.7 0.5 -2.7 2.6 0.6 3.7 -3.2 -1.8 -3.2 1.8 0.6 -3.7 -2.7 -2.6 3.7 -0.5 Z" fill="currentColor"/>
+    <g id="scallop-arch">
+      <!-- viewBox 0 0 300 40 -->
+      <path d="M0 40 V18 Q15 0 30 18 Q45 0 60 18 Q75 0 90 18 Q105 0 120 18 Q135 0 150 18 Q165 0 180 18 Q195 0 210 18 Q225 0 240 18 Q255 0 270 18 Q285 0 300 18 V40 Z"
+        fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M0 40 V18 Q15 0 30 18 Q45 0 60 18 Q75 0 90 18 Q105 0 120 18 Q135 0 150 18 Q165 0 180 18 Q195 0 210 18 Q225 0 240 18 Q255 0 270 18 Q285 0 300 18 V40"
+        fill="none" stroke="currentColor" stroke-width="1" opacity=".5" transform="translate(0,6) scale(1,0.7)"/>
+    </g>
+    <g id="diamond-emblem">
+      <!-- viewBox 0 0 172 172 -->
+      <rect x="6" y="6" width="160" height="160" rx="4" transform="rotate(45 86 86)" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <rect x="26" y="26" width="120" height="120" rx="3" transform="rotate(45 86 86)" fill="none" stroke="currentColor" stroke-width="1"/>
+      <rect x="44" y="44" width="84" height="84" transform="rotate(45 86 86)" fill="none" stroke="currentColor" stroke-width="2"/>
+      <g opacity=".8">
+        <circle cx="86" cy="14" r="3" fill="currentColor"/>
+        <circle cx="86" cy="158" r="3" fill="currentColor"/>
+        <circle cx="14" cy="86" r="3" fill="currentColor"/>
+        <circle cx="158" cy="86" r="3" fill="currentColor"/>
+      </g>
+    </g>
+    <g id="icon-calendar">
+      <rect x="3" y="6" width="26" height="22" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="3" y1="12" x2="29" y2="12" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="9" y1="3" x2="9" y2="9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="23" y1="3" x2="23" y2="9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="16" cy="19" r="2.4" fill="currentColor"/>
+    </g>
+    <g id="icon-clock">
+      <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="16" y1="16" x2="16" y2="7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="16" y1="16" x2="22" y2="19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </g>
+    <g id="icon-pin">
+      <path d="M16 30S4 18 4 12a12 12 0 1 1 24 0c0 6-12 18-12 18Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="16" cy="12" r="4" fill="currentColor"/>
     </g>
   </defs>
 </svg>
@@ -277,13 +358,13 @@ nav.bottomnav a .ic{font-size:16px;}
 
 <div id="envelope-screen">
   <div class="env-wrap">
-    <div class="card">G &amp; Z</div>
+    <div class="card"><span class="card-sh">S &amp; H</span><span>Wedding Invitation</span></div>
     <div class="env-body">
-      <svg class="env-motif a" viewBox="0 0 48 92"><use href="#botanical" fill="#B18A52" stroke="#B18A52" opacity=".6"/></svg>
-      <svg class="env-motif b" viewBox="0 0 48 92"><use href="#botanical" fill="#B18A52" stroke="#B18A52" opacity=".6"/></svg>
+      <svg class="env-motif a" viewBox="0 0 48 92"><use href="#botanical"/></svg>
+      <svg class="env-motif b" viewBox="0 0 48 92"><use href="#botanical"/></svg>
     </div>
     <div class="flap"></div>
-    <div class="seal" id="seal"><span class="glow"></span><span style="position:relative;z-index:1;">G&amp;Z</span></div>
+    <div class="seal" id="seal"><span class="glow"></span><span style="position:relative;z-index:1;">S&amp;H</span></div>
     <div class="env-hint">Tap the seal to open</div>
   </div>
 </div>
@@ -291,110 +372,175 @@ nav.bottomnav a .ic{font-size:16px;}
 <div class="stage">
 <aside class="side-panel">
   <div class="side-inner">
-    <svg class="side-monogram" viewBox="0 0 32 32" color="#B18A52"><use href="#crescent-star"/></svg>
-    <div class="side-eyebrow">Save The Date</div>
-    <div class="side-date">10 · 10 · 2026</div>
-    <div class="side-names">Gabriella<span class="amp">&amp;</span>Zachary</div>
+    <div class="side-monogram">S <span style="color:#d8c07f">&amp;</span> H</div>
+    <div class="side-eyebrow">Insha Allah Nikah</div>
+    <div class="side-date">12 · 09 · 2026</div>
+    <div class="side-names">Sumera &amp; Hayat</div>
+    <div class="side-tag">Together in the shade of Allah's mercy<br>Today, Tomorrow and Always</div>
   </div>
 </aside>
 <div class="phone">
   <div class="texture"></div>
   <div id="invite">
 
-    <section id="hero">
+    <!-- 01 — FRONT COVER -->
+    <section id="cover">
       <svg class="corner-svg tl" viewBox="0 0 48 92"><use href="#botanical"/></svg>
       <svg class="corner-svg br" viewBox="0 0 48 92"><use href="#botanical"/></svg>
-      <div class="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-      <div class="bismillah-en">In the name of Allah, the Most Gracious, the Most Merciful</div>
-      <div class="eyebrow">The Nikah Of</div>
-      <div class="date-line">10 · 10 · 2026</div>
-      <h1 class="names">Gabriella</h1>
-      <div class="amp">&amp;</div>
-      <h1 class="names">Zachary</h1>
-      <div class="divider"></div>
-      <p class="lead">Together with their families, request the honor of your presence as they unite in marriage, in sha Allah.</p>
+
+      <div class="cover-top">
+        <div class="cover-left">
+          <div class="monogram">S <span class="amp">&amp;</span> H</div>
+          <div class="names-caps">SUMERA &amp; HAYAT</div>
+          <div class="tagline">Together in the shade of ALLAH'S mercy<br>Today, Tomorrow and Always</div>
+        </div>
+        <div class="cover-right">
+          <div class="cover-flourish">|&nbsp;|</div>
+          <div class="arabic-lg">الله</div>
+          <div class="arabic-md">مبروك</div>
+          <div class="cover-flourish">|&nbsp;|&nbsp;|&nbsp;|</div>
+        </div>
+      </div>
+
+      <div class="emblem-wrap">
+        <div class="emblem">
+          <svg viewBox="0 0 172 172"><use href="#diamond-emblem"/></svg>
+          <div class="emblem-text">Wedding<br>Invitation</div>
+        </div>
+        <div class="date-vert">
+          <span>12</span><span class="slash">/</span><span>09</span><span class="slash">/</span><span>26</span>
+        </div>
+      </div>
+
+      <div class="rule-line"></div>
+      <div class="recip">
+        <div class="lbl">To:</div>
+        <div class="rule-line" style="margin:10px 0;"></div>
+        <div class="msg">Your Name is in our heart</div>
+        <div class="msg2">You &amp; Your Family Heartly Invited</div>
+      </div>
+      <div class="rule-line"></div>
+
+      <div class="sender">
+        <div class="lbl">From:</div>
+        <div class="names">MRS. &amp; MR. SAYED GARIB VALI</div>
+        <div class="addr">#144 &amp; 145, 2nd Stage, 8th Cross,<br>Sayed Fateshawali Nagar, Old-Hubli.</div>
+        <div class="addr">Cell : <a href="tel:+919019833730">9019833730</a>, <a href="tel:+919480751578">9480751578</a></div>
+      </div>
     </section>
 
-    <section id="countdown">
-      <div class="eyebrow">The Celebration Begins In</div>
-      <div class="countdown" id="cd">
-        <div class="cbox"><span class="num" id="cd-d">--</span><span class="lbl">Days</span></div>
-        <span class="colon">:</span>
-        <div class="cbox"><span class="num" id="cd-h">--</span><span class="lbl">Hours</span></div>
-        <span class="colon">:</span>
-        <div class="cbox"><span class="num" id="cd-m">--</span><span class="lbl">Mins</span></div>
-        <span class="colon">:</span>
-        <div class="cbox"><span class="num" id="cd-s">--</span><span class="lbl">Secs</span></div>
+    <!-- 02 — BISMILLAH -->
+    <section id="bismillah">
+      <svg class="corner-svg tl" viewBox="0 0 48 92"><use href="#botanical"/></svg>
+      <svg class="corner-svg tr" viewBox="0 0 48 92"><use href="#botanical"/></svg>
+      <div class="bismillah" lang="ar" dir="rtl">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+      <div class="bismillah-en">In The Name Of Allah</div>
+      <div class="bismillah-en2">The Most Beneficent, The Most Merciful</div>
+      <div class="divider"></div>
+      <p class="lead">With the blessings of our beloved elders</p>
+      <div class="gold-name">Al-Haj Mrs. Habibsah Hakim<br>&amp; Mrs. Sayed Nazir Ahmed</div>
+    </section>
+
+    <!-- 03 — NIKAH INVITATION -->
+    <section id="nikah">
+      <div class="arch-frame">
+        <svg class="arch-top" viewBox="0 0 300 40" preserveAspectRatio="none"><use href="#scallop-arch"/></svg>
+        <div class="arch-sides">
+          <p class="lead" style="margin-bottom:2px;">Mrs. &amp; Mr.</p>
+          <div class="gold-heading" style="font-size:18px;letter-spacing:1.5px;">SAYED GARIB VALI</div>
+          <p class="lead">cordially invite you and your family to grace the auspicious occasion of the</p>
+          <div class="gold-heading" style="font-size:30px;margin:14px 0;">NIKAH</div>
+          <p class="lead">ceremony of our beloved daughter</p>
+
+          <div class="couple-block">
+            <div class="couple-name">Sumera Alam</div>
+            <div class="couple-deg">B.E. MBA</div>
+          </div>
+          <div class="with-word">with</div>
+          <div class="couple-block">
+            <div class="couple-name">Hayat</div>
+            <div class="couple-deg">B.E.</div>
+          </div>
+          <div class="family-note">(S/o. Abdul Razak Sayyadsab Halladamani of lokapur Dist. Bagalkot)</div>
+        </div>
+        <svg class="arch-bottom" viewBox="0 0 100 20" preserveAspectRatio="none">
+          <line x1="0" y1="10" x2="100" y2="10" stroke="currentColor" stroke-width="1"/>
+          <circle cx="50" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
       </div>
       <div class="divider"></div>
-      <div class="eyebrow">Schedule Of Events</div>
-      <div class="schedule">
-        <div class="event"><span class="dot"></span><div><span class="time">5:00 PM</span><span class="label">Guest Arrival</span></div></div>
-        <div class="event"><span class="dot"></span><div><span class="time">6:00 PM</span><span class="label">Nikah Ceremony</span></div></div>
-        <div class="event"><span class="dot"></span><div><span class="time">7:00 PM</span><span class="label">Walima Reception</span></div></div>
-        <div class="event"><span class="dot"></span><div><span class="time">8:00 PM</span><span class="label">Dinner</span></div></div>
-        <div class="event"><span class="dot"></span><div><span class="time">9:00 PM</span><span class="label">Farewell &amp; Duas</span></div></div>
+      <p class="lead">Your gracious presence and blessings will make this occasion truly memorable.</p>
+    </section>
+
+    <!-- 04 — WEDDING DETAILS -->
+    <section id="details">
+      <svg class="corner-svg bl" viewBox="0 0 48 92"><use href="#botanical"/></svg>
+      <svg class="corner-svg br" viewBox="0 0 48 92"><use href="#botanical"/></svg>
+      <div class="monogram" style="font-size:44px;">S <span class="amp">&amp;</span> H</div>
+      <div class="names-caps">SUMERA &amp; HAYAT</div>
+      <p class="lead" style="letter-spacing:.5px;">A NEW BEGINNING, A LIFELONG JOURNEY,<br>IN THE SHADE OF ALLAH'S MERCY</p>
+      <div class="gold-heading" style="font-size:24px;margin-top:16px;">INSHA ALLAH NIKAH</div>
+    </section>
+
+    <!-- 05/06 — DATE + TIME -->
+    <section id="datetime">
+      <div class="arch-frame">
+        <svg class="arch-top" viewBox="0 0 300 40" preserveAspectRatio="none"><use href="#scallop-arch"/></svg>
+        <div class="arch-sides">
+          <div class="info-block">
+            <svg class="info-icon" viewBox="0 0 32 32"><use href="#icon-calendar"/></svg>
+            <div class="day-name">Saturday</div>
+            <div class="big-num">12<sup style="font-size:16px;">th</sup></div>
+            <div class="month-line">September 2026</div>
+            <div class="hijri-line">29 Rabi' ul Awwal 1448 Hijri</div>
+          </div>
+          <div class="rule-line"></div>
+          <div class="info-block">
+            <svg class="info-icon" viewBox="0 0 32 32"><use href="#icon-clock"/></svg>
+            <div class="day-name">Time</div>
+            <div class="time-num">12:15 PM</div>
+          </div>
+        </div>
+        <svg class="arch-bottom" viewBox="0 0 100 20" preserveAspectRatio="none">
+          <line x1="0" y1="10" x2="100" y2="10" stroke="currentColor" stroke-width="1"/>
+          <circle cx="50" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
       </div>
     </section>
 
+    <!-- 07 — VENUE -->
     <section id="venue">
       <svg class="corner-svg tl" viewBox="0 0 48 92"><use href="#botanical"/></svg>
       <svg class="corner-svg tr" viewBox="0 0 48 92"><use href="#botanical"/></svg>
+      <svg class="info-icon" viewBox="0 0 32 32"><use href="#icon-pin"/></svg>
       <div class="eyebrow">Venue</div>
-      <div class="names" style="font-size:34px;">The Rosewood Manor</div>
-      <div class="venue-illust">
-        <svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="300" height="170" fill="#e9d7ac"/>
-          <rect x="0" y="0" width="300" height="170" fill="none" stroke="#B18A52" stroke-width="2"/>
-          <polygon points="60,95 150,40 240,95" fill="#dcc48f" stroke="#8a6636" stroke-width="1.5"/>
-          <rect x="70" y="95" width="160" height="60" fill="#e3ce9e" stroke="#8a6636" stroke-width="1.5"/>
-          <path d="M135 155 v-35 a15 15 0 0 1 30 0 v35 z" fill="#4A1718"/>
-          <rect x="90" y="108" width="18" height="22" fill="#69705A" opacity=".8"/>
-          <rect x="192" y="108" width="18" height="22" fill="#69705A" opacity=".8"/>
-          <rect x="146" y="36" width="8" height="16" fill="#8a6636"/>
-          <g transform="translate(140,14) scale(.9)" color="#2F4F3E"><use href="#crescent-star"/></g>
-          <g transform="translate(20,120)"><use href="#botanical" fill="#69705A" stroke="#69705A" transform="scale(.7)"/></g>
-          <g transform="translate(255,120) scale(-1,1)"><use href="#botanical" fill="#69705A" stroke="#69705A" transform="scale(.7)"/></g>
-        </svg>
+      <div class="venue-name">The White Palace</div>
+      <div class="venue-addr">Beside Vani Plot, Gudihal Road,<br>Old Hubballi</div>
+      <div class="qr-row">
+        <div class="qr-box">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=6&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2F%3Fapi%3D1%26query%3DThe%2BWhite%2BPalace%2C%2BBeside%2BVani%2BPlot%2C%2BGudihal%2BRoad%2C%2BOld%2BHubballi" alt="Scan for venue location" loading="lazy">
+          <span>Scan For Location</span>
+        </div>
       </div>
-      <p class="lead">214 Willow Creek Lane<br>Hudson Valley, NY</p>
-      <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Hudson+Valley+NY" target="_blank" rel="noopener">View Location</a>
+      <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=The+White+Palace%2C+Beside+Vani+Plot%2C+Gudihal+Road%2C+Old+Hubballi" target="_blank" rel="noopener">View Location</a>
     </section>
 
-    <section id="party">
-      <svg class="corner-svg bl" viewBox="0 0 48 92"><use href="#botanical"/></svg>
-      <svg class="corner-svg br" viewBox="0 0 48 92"><use href="#botanical"/></svg>
-      <div class="eyebrow">Dress Code</div>
-      <div class="names" style="font-size:30px;">Modest &amp; Elegant</div>
+    <!-- 08 — COMPLIMENTS -->
+    <section id="compliments">
       <div class="divider"></div>
-      <div class="eyebrow">Wedding Party</div>
-      <div class="party-illust">
-        <svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
-          <!-- groom: sherwani-style stand collar -->
-          <g transform="translate(60,10)">
-            <ellipse cx="20" cy="18" rx="13" ry="15" fill="#3B2923"/>
-            <path d="M4 42 q16 -14 32 0 l6 72 h-44 z" fill="#2b1f1a"/>
-            <path d="M11 40 q9 -8 18 0 l-2 10 h-14 z" fill="#B18A52" opacity=".85"/>
-            <rect x="17" y="50" width="6" height="58" fill="#f4e8d5" opacity=".9"/>
-          </g>
-          <!-- bride: hijab-draped silhouette -->
-          <g transform="translate(128,2)">
-            <path d="M24 4 C 10 4 2 16 4 32 C 5 42 12 46 12 46 L 36 46 C 36 46 43 42 44 32 C 46 16 38 4 24 4 Z" fill="#4A1718"/>
-            <path d="M6 30 C 2 46 4 62 10 70 L 38 70 C 44 62 46 46 42 30 C 40 44 34 50 24 50 C 14 50 8 44 6 30 Z" fill="#4A1718"/>
-            <path d="M-4 48 q28 -18 56 0 l14 82 h-84 z" fill="#faf4e6" stroke="#dcc48f" stroke-width="1"/>
-          </g>
-          <g transform="translate(6,60)"><use href="#botanical" fill="#9B4B4E" stroke="#9B4B4E" transform="scale(.55)"/></g>
-          <g transform="translate(232,60) scale(-1,1)"><use href="#botanical" fill="#9B4B4E" stroke="#9B4B4E" transform="scale(.55)"/></g>
-        </svg>
+      <p class="lead">With Best Compliments From</p>
+      <div class="compliments" style="margin-top:14px;">
+        <span class="org">AL Fateh-ahle-Sunnat Wal Jamat</span> &amp;<br>
+        <span class="org">Hasmi Masjid Jamat</span>, Sayed Fateshawali Nagar Hubli,<br>Family &amp; Friends
       </div>
-      <p class="lead">Kindly join us in modest, elegant attire as we celebrate this day surrounded by the people we love most.</p>
     </section>
 
+    <!-- 09 — RSVP -->
     <section id="rsvp">
       <div class="wax-mini"></div>
       <div class="eyebrow">Confirm Your Attendance</div>
-      <div class="names" style="font-size:30px;">RSVP</div>
-      <p class="lead">We hope you can join us for our Nikah and Walima, in sha Allah. Kindly respond by September 1st, 2026.</p>
+      <div class="gold-heading" style="font-size:26px;">RSVP</div>
+      <p class="lead">We hope you can join us for this blessed Nikah, in sha Allah. Kindly respond soon.</p>
       <button class="rsvp-btn" id="rsvp-open">RSVP Now</button>
 
       <form class="rsvp-form" id="rsvp-form">
@@ -408,21 +554,30 @@ nav.bottomnav a .ic{font-size:16px;}
         </div>
 
         <label>Number Of Guests</label>
-        <input type="number" min="1" max="6" value="1">
+        <input type="number" min="1" max="10" value="1">
 
         <label>Name(s) Of Guest</label>
         <input type="text" placeholder="Optional">
 
         <button type="submit">Submit</button>
       </form>
-      <div class="thankyou" id="rsvp-thanks">With love, your response has been received. Jazakum Allahu khayran. ❧</div>
+      <div class="thankyou" id="rsvp-thanks">With love, your response has been received. Jazakum Allahu khayran. ❦</div>
+    </section>
+
+    <!-- 10 — CLOSING -->
+    <section id="closing">
+      <svg class="corner-svg bl" viewBox="0 0 48 92"><use href="#botanical"/></svg>
+      <svg class="corner-svg br" viewBox="0 0 48 92"><use href="#botanical"/></svg>
+      <div class="closing-msg">Your gracious presence and blessings will make this occasion truly memorable.</div>
+      <div class="monogram" style="font-size:40px;">S <span class="amp">&amp;</span> H</div>
       <div class="credit">Made with love by Tousif</div>
     </section>
 
   </div>
 
   <nav class="bottomnav">
-    <a href="#hero" class="nav-link active"><span class="ic">✦</span>Invitation</a>
+    <a href="#cover" class="nav-link active"><span class="ic">✦</span>Invitation</a>
+    <a href="#nikah" class="nav-link"><span class="ic">❖</span>Nikah</a>
     <a href="#venue" class="nav-link"><span class="ic">◉</span>Details</a>
     <a href="#rsvp" class="nav-link"><span class="ic">☾</span>RSVP</a>
   </nav>
@@ -452,7 +607,7 @@ seal.addEventListener('click', () => {
     .to(seal, {scale:0, opacity:0, duration:.4, ease:'back.in(1.6)'})
     .to(flap, {rotationX:-178, duration:1.05, ease:'power3.inOut', transformPerspective:1400}, '-=.1')
     .to(card, {opacity:1, y:-14, duration:.6, ease:'power2.out'}, '-=.5')
-    .to(screen, {backgroundColor:'#f4e8d5', duration:.7, ease:'power1.inOut'}, '-=.3')
+    .to(screen, {backgroundColor:'#fbf6ea', duration:.7, ease:'power1.inOut'}, '-=.3')
     .to('.env-wrap', {y:-40, scale:1.05, opacity:0, duration:.6, ease:'power1.in'}, '-=.15')
     .call(()=>{
       invite.classList.add('show');
@@ -460,22 +615,6 @@ seal.addEventListener('click', () => {
     })
     .to(screen, {duration:.1, onComplete:()=>screen.classList.add('gone')});
 });
-
-// ---------- Countdown ----------
-const target = new Date('2026-10-10T17:00:00');
-function tick(){
-  const now = new Date();
-  let diff = Math.max(0, target - now);
-  const d = Math.floor(diff/86400000); diff-=d*86400000;
-  const h = Math.floor(diff/3600000); diff-=h*3600000;
-  const m = Math.floor(diff/60000); diff-=m*60000;
-  const s = Math.floor(diff/1000);
-  document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
-  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-}
-tick(); setInterval(tick,1000);
 
 // ---------- RSVP form toggle ----------
 const rsvpOpenBtn = document.getElementById('rsvp-open');
@@ -493,7 +632,7 @@ rsvpForm.addEventListener('submit', (e)=>{
 
 // ---------- Bottom nav active state ----------
 const links = document.querySelectorAll('.nav-link');
-const secs = ['hero','venue','rsvp'].map(id=>document.getElementById(id));
+const secs = ['cover','nikah','venue','rsvp'].map(id=>document.getElementById(id));
 const io = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -501,7 +640,7 @@ const io = new IntersectionObserver((entries)=>{
       links.forEach(l=>l.classList.toggle('active', l.getAttribute('href')==='#'+id));
     }
   });
-},{threshold:0.4});
+},{threshold:0.35});
 secs.forEach(s=>s && io.observe(s));
 
 // ---------- Scroll reveal per section (GSAP + ScrollTrigger) ----------
