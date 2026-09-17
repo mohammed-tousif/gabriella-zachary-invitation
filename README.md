@@ -8,14 +8,17 @@ Single-file, animated digital invitation sites. Each event lives in its own fold
 |---|---|---|---|
 | Sumera & Hayat — Nikah | [gabriella-zachary.vercel.app](https://gabriella-zachary.vercel.app) | [`index.html`](index.html) | `master` |
 | Mohammed Yusuf — Chilla Ceremony | [chilla-mohammed-yusuf.vercel.app](https://chilla-mohammed-yusuf.vercel.app) | [`chilla-mohammed-yusuf/index.html`](chilla-mohammed-yusuf/index.html) | `chilla-mohammed-yusuf` (not merged to `master`) |
+| Nikhath & Abdul Jabbar — Engagement | [nikhath-abduljabbar.vercel.app](https://nikhath-abduljabbar.vercel.app) | [`nikhath-abduljabbar/index.html`](nikhath-abduljabbar/index.html) | `nikhath-abduljabbar` (not merged to `master`) |
 
 ## Structure
 
 ```
 .
 ├── index.html                     # Sumera & Hayat (root site, master branch)
-└── chilla-mohammed-yusuf/
-    └── index.html                 # Mohammed Yusuf Chilla Ceremony (own branch + Vercel project)
+├── chilla-mohammed-yusuf/
+│   └── index.html                 # Mohammed Yusuf Chilla Ceremony (own branch + Vercel project)
+└── nikhath-abduljabbar/
+    └── index.html                 # Nikhath & Abdul Jabbar Engagement (own branch + Vercel project)
 ```
 
 Each `index.html` is fully self-contained — HTML, CSS, and JS in one file, with fonts and GSAP/ScrollTrigger pulled from CDN. No build step.
@@ -40,6 +43,9 @@ vercel --prod
 
 # Mohammed Yusuf Chilla Ceremony — from its own folder
 cd chilla-mohammed-yusuf && vercel --prod
+
+# Nikhath & Abdul Jabbar Engagement — from its own folder
+cd nikhath-abduljabbar && vercel --prod
 ```
 
 New events should follow the same pattern: a new folder + a new branch (reviewed before merging to `master`) + a new Vercel project rooted at that folder.
