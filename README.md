@@ -8,7 +8,7 @@ Single-file, animated digital invitation sites. Each event lives in its own fold
 |---|---|---|---|
 | Sumera & Hayat — Nikah | [gabriella-zachary.vercel.app](https://gabriella-zachary.vercel.app) | [`index.html`](index.html) | `master` |
 | Mohammed Yusuf — Chilla Ceremony | [chilla-mohammed-yusuf.vercel.app](https://chilla-mohammed-yusuf.vercel.app) | [`chilla-mohammed-yusuf/index.html`](chilla-mohammed-yusuf/index.html) | `chilla-mohammed-yusuf` (not merged to `master`) |
-| Nikhath & Abdul Jabbar — Engagement | [nikhath-abduljabbar.vercel.app](https://nikhath-abduljabbar.vercel.app) | [`nikhath-abduljabbar/index.html`](nikhath-abduljabbar/index.html) | `nikhath-abduljabbar` (not merged to `master`) |
+| Nikhath & Abdul Jabbar — Engagement | [invitation-from-kazi-family.vercel.app](https://invitation-from-kazi-family.vercel.app) | [`nikhath-abduljabbar/index.html`](nikhath-abduljabbar/index.html) | `nikhath-abduljabbar` (not merged to `master`) |
 
 ## Structure
 
