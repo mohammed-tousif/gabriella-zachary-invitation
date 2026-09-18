@@ -36,6 +36,63 @@ body{
 }
 img,svg{display:block;max-width:100%;}
 
+/* ================= ENVELOPE ================= */
+#envelope-screen{
+  position:fixed;inset:0;z-index:50;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(ellipse at center, #2c3a46 0%, #1a242c 70%, #0d1317 100%);
+  perspective:1400px;
+}
+.env-wrap{width:82%;max-width:340px;aspect-ratio:3/2;position:relative}
+.env-body{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,var(--ivory-deep),var(--ivory-shadow) 60%,#b3a586);
+  border-radius:6px;
+  box-shadow:0 20px 60px rgba(0,0,0,.6), inset 0 0 40px rgba(110,96,71,.2);
+  background-image:repeating-linear-gradient(45deg, rgba(110,96,71,.06) 0 2px, transparent 2px 14px);
+}
+.env-body::before{
+  content:"";position:absolute;inset:8px;border:1px solid rgba(110,96,71,.4);
+  border-radius:3px;pointer-events:none;
+}
+.env-body .env-motif{position:absolute;width:56px;height:56px;opacity:.6;}
+.env-body .env-motif.a{top:8px;left:8px;}
+.env-body .env-motif.b{bottom:8px;right:8px;transform:rotate(180deg);}
+.env-card{
+  position:absolute;left:8%;right:8%;top:14%;bottom:14%;
+  background:linear-gradient(170deg,var(--blue-light),var(--blue) 60%,var(--blue-mid));
+  border-radius:3px;box-shadow:0 10px 30px rgba(0,0,0,.4);
+  z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--cream-text);
+  letter-spacing:1px;text-transform:uppercase;opacity:0;
+}
+.env-card .env-card-na{font-family:'Cormorant',serif;font-size:28px;color:var(--cream-text);font-style:normal;letter-spacing:0;}
+.env-flap{position:absolute;left:0;width:100%;height:100%;transform-origin:top center;
+  clip-path:polygon(0 0,100% 0,50% 62%);
+  background:linear-gradient(200deg,var(--ivory-shadow),#a89778 70%);
+  box-shadow:0 6px 20px rgba(0,0,0,.35) inset;
+  z-index:4;
+}
+.env-seal{
+  position:absolute;top:50%;left:50%;width:72px;height:72px;border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle at 35% 30%, var(--rose), var(--taupe) 55%, var(--taupe-dark) 100%);
+  box-shadow:0 6px 14px rgba(0,0,0,.5), inset 0 2px 4px rgba(255,255,255,.4), inset 0 -6px 10px rgba(0,0,0,.3);
+  z-index:5;display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant',serif;color:var(--blue-ink);font-size:22px;cursor:pointer;
+}
+.env-seal .env-glow{
+  position:absolute;inset:-30px;border-radius:50%;
+  background:radial-gradient(circle, rgba(241,231,211,.9), transparent 70%);
+  opacity:0;pointer-events:none;
+}
+.env-hint{
+  position:absolute;bottom:-46px;left:0;right:0;text-align:center;
+  color:var(--rose);font-size:13px;letter-spacing:3px;text-transform:uppercase;
+  font-family:'Cormorant Garamond',serif;opacity:.9;
+}
+#envelope-screen.gone{display:none;}
+
 /* ================= PAGE STAGE ================= */
 .stage{
   min-height:100vh;width:100%;
@@ -172,49 +229,6 @@ img,svg{display:block;max-width:100%;}
   line-height:1.7;color:var(--cream-text);opacity:.95;max-width:80%;margin:0 auto;
 }
 
-/* ================= RSVP (below the card) ================= */
-.rsvp-section{
-  width:100%;max-width:480px;margin-top:34px;padding:0 2px;
-  opacity:0;transform:translateY(16px);
-}
-.rsvp-card{
-  background:var(--ivory);border:1px solid rgba(110,96,71,.3);border-radius:3px;
-  padding:clamp(26px,7vw,34px) clamp(20px,6vw,28px);text-align:center;
-  box-shadow:0 18px 44px rgba(10,16,22,.4);
-}
-.rsvp-eyebrow{
-  font-family:'Cormorant Garamond',serif;letter-spacing:3px;text-transform:uppercase;
-  font-size:12.5px;color:var(--taupe-dark);opacity:.85;margin-bottom:8px;
-}
-.rsvp-title{
-  font-family:'Cormorant',serif;font-weight:500;font-size:26px;color:var(--blue-deep);margin-bottom:10px;
-}
-.rsvp-lead{
-  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15.5px;color:var(--taupe-dark);
-  line-height:1.7;max-width:280px;margin:0 auto 18px;
-}
-.rsvp-btn{
-  padding:13px 40px;background:var(--blue-deep);color:var(--cream-text);border:none;border-radius:30px;
-  font-family:'Cormorant Garamond',serif;letter-spacing:2.5px;text-transform:uppercase;font-size:12.5px;
-  cursor:pointer;box-shadow:0 10px 26px rgba(55,76,99,.4);
-}
-form.rsvp-form{max-width:300px;margin:20px auto 0;text-align:left;display:none;}
-form.rsvp-form.show{display:block;animation:fadeUp .5s ease;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-form.rsvp-form label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--blue-deep);margin:14px 0 6px;}
-form.rsvp-form input[type=text],form.rsvp-form input[type=number]{
-  width:100%;padding:9px 10px;border:1px solid var(--ivory-shadow);background:#fffdf8;
-  border-radius:3px;font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--blue-ink);
-}
-.radio-row{display:flex;gap:22px;margin-top:4px;}
-.radio-row label{display:flex;align-items:center;gap:6px;margin:0;font-size:13px;text-transform:none;letter-spacing:0;color:var(--blue-ink);}
-form.rsvp-form button{
-  margin-top:20px;width:100%;padding:13px;background:var(--blue-ink);color:var(--cream-text);
-  border:none;letter-spacing:2px;text-transform:uppercase;font-size:12px;border-radius:30px;cursor:pointer;
-}
-.thankyou{display:none;text-align:center;margin-top:20px;color:var(--blue-deep);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;}
-.thankyou.show{display:block;animation:fadeUp .5s ease;}
-
 .credit{
   text-align:center;margin:26px 0 40px;font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:12.5px;letter-spacing:1.2px;color:var(--rose);opacity:.75;
@@ -260,6 +274,19 @@ form.rsvp-form button{
 </head>
 <body>
 
+<div id="envelope-screen">
+  <div class="env-wrap">
+    <div class="env-card"><span class="env-card-na">N &amp; A</span><span>Engagement</span></div>
+    <div class="env-body">
+      <svg class="env-motif a" viewBox="0 0 60 60"><use href="#rosette"/></svg>
+      <svg class="env-motif b" viewBox="0 0 60 60"><use href="#rosette"/></svg>
+    </div>
+    <div class="env-flap"></div>
+    <div class="env-seal" id="seal"><span class="env-glow"></span><span style="position:relative;z-index:1;">N&amp;A</span></div>
+    <div class="env-hint">Tap the seal to open</div>
+  </div>
+</div>
+
 <div class="stage">
   <div class="card-wrap" id="card-wrap">
     <div class="frame">
@@ -304,57 +331,38 @@ form.rsvp-form button{
     </div>
   </div>
 
-  <div class="rsvp-section" id="rsvp-section">
-    <div class="rsvp-card">
-      <div class="rsvp-eyebrow">Kindly Respond</div>
-      <div class="rsvp-title">RSVP</div>
-      <div class="rsvp-lead">We hope you can join us for this special beginning. Let us know if you'll be there.</div>
-      <button class="rsvp-btn" id="rsvp-open">RSVP Now</button>
-
-      <form class="rsvp-form" id="rsvp-form">
-        <label>Your Name</label>
-        <input type="text" required placeholder="Full name">
-
-        <label>Will You Be Attending?</label>
-        <div class="radio-row">
-          <label><input type="radio" name="attend" value="yes" checked> Yes</label>
-          <label><input type="radio" name="attend" value="no"> No</label>
-        </div>
-
-        <label>Number Of Guests</label>
-        <input type="number" min="1" max="10" value="1">
-
-        <button type="submit">Submit</button>
-      </form>
-      <div class="thankyou" id="rsvp-thanks">With love, your response has been received. We can't wait to celebrate with you.</div>
-    </div>
-  </div>
-
   <div class="credit" id="credit">Made with love by Tousif</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
-// ---------- Grand reveal on load ----------
-window.addEventListener('DOMContentLoaded', ()=>{
-  const tl = gsap.timeline({defaults:{ease:'power3.out'}});
-  tl.to('#card-wrap', {opacity:1, y:0, scale:1, duration:1.1})
-    .fromTo('.bloom', {opacity:0, scale:.7}, {opacity:1, scale:1, duration:.8, stagger:.08, ease:'back.out(1.6)'}, '-=.7')
-    .fromTo('.panel > *', {opacity:0, y:12}, {opacity:1, y:0, duration:.7, stagger:.07}, '-=.5')
-    .to('#rsvp-section', {opacity:1, y:0, duration:.8}, '-=.2')
-    .to('#credit', {opacity:1, duration:.8}, '-=.4');
-});
+// ---------- Envelope open, then reveal the card ----------
+const screen = document.getElementById('envelope-screen');
+const seal = document.getElementById('seal');
+const flap = screen.querySelector('.env-flap');
+const glow = screen.querySelector('.env-glow');
+const envCard = screen.querySelector('.env-card');
+let opened = false;
 
-// ---------- RSVP form toggle ----------
-const rsvpOpenBtn = document.getElementById('rsvp-open');
-const rsvpForm = document.getElementById('rsvp-form');
-const thanks = document.getElementById('rsvp-thanks');
-rsvpOpenBtn.addEventListener('click', ()=>{ rsvpForm.classList.toggle('show'); });
-rsvpForm.addEventListener('submit', (e)=>{
-  e.preventDefault();
-  rsvpForm.classList.remove('show');
-  thanks.classList.add('show');
-  rsvpOpenBtn.style.display='none';
+seal.addEventListener('click', () => {
+  if(opened) return;
+  opened = true;
+  const tl = gsap.timeline();
+  tl.to(seal, {scale:.9, duration:.12, ease:'power1.in'})
+    .to(glow, {opacity:1, duration:.35, ease:'power1.out'}, '<')
+    .to(seal, {scale:0, opacity:0, duration:.4, ease:'back.in(1.6)'})
+    .to(flap, {rotationX:-178, duration:1.05, ease:'power3.inOut', transformPerspective:1400}, '-=.1')
+    .to(envCard, {opacity:1, y:-14, duration:.6, ease:'power2.out'}, '-=.5')
+    .to(screen, {backgroundColor:'#20303c', duration:.7, ease:'power1.inOut'}, '-=.3')
+    .to('.env-wrap', {y:-40, scale:1.05, opacity:0, duration:.6, ease:'power1.in'}, '-=.15')
+    .call(()=>{
+      const reveal = gsap.timeline({defaults:{ease:'power3.out'}});
+      reveal.to('#card-wrap', {opacity:1, y:0, scale:1, duration:1.1})
+        .fromTo('.bloom', {opacity:0, scale:.7}, {opacity:1, scale:1, duration:.8, stagger:.08, ease:'back.out(1.6)'}, '-=.7')
+        .fromTo('.panel > *', {opacity:0, y:12}, {opacity:1, y:0, duration:.7, stagger:.07}, '-=.5')
+        .to('#credit', {opacity:1, duration:.8}, '-=.3');
+    })
+    .to(screen, {duration:.1, onComplete:()=>screen.classList.add('gone')});
 });
 </script>
 </body>
